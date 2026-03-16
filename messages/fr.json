@@ -1,0 +1,110 @@
+{
+  "Index": {
+    "title": "CAFCO — Chorreadores de Concreto Artesanales",
+    "description": "Chorreadores de café artesanales en concreto y madera. Diseño costarricense para una experiencia de café elevada.",
+    "announcement": "Envío gratuito en pedidos mayores a ₡35,000",
+    "buyNow": "Comprar ahora",
+    "nav": {
+      "product": "Chorreador",
+      "materials": "Materiales",
+      "preparation": "Preparación",
+      "about": "Nosotros"
+    },
+    "hero": {
+      "eyebrow": "Hecho a mano en Costa Rica",
+      "title": "Concreto, madera<br>y <em class=\"font-style-italic font-weight-400\">café perfecto</em>",
+      "subtitle": "Chorreadores artesanales que elevan tu ritual de café a una experiencia sensorial única.",
+      "cta": "Ordenar por WhatsApp"
+    },
+    "features": {
+      "f1Title": "Concreto Artesanal",
+      "f1Desc": "Cada pieza única",
+      "f2Title": "Madera de Cenízaro",
+      "f2Desc": "Reforestación local",
+      "f3Title": "Vidrio Borosilicato",
+      "f3Desc": "Filtrado cristalino",
+      "f4Title": "Envío Nacional",
+      "f4Desc": "Todo Costa Rica"
+    },
+    "product": {
+      "badge": "Nuevo",
+      "eyebrow": "Chorreador Pour Over",
+      "title": "CAFCO <em class=\"font-style-italic font-weight-400\">Original</em>",
+      "price": "₡28,500 <small class=\"text-[0.8rem] text-muted font-body font-normal\">IVI incluido</small>",
+      "desc": "Nuestro chorreador insignia combina una base de concreto hecho a mano con un brazo de madera de cenízaro costarricense y un cono de vidrio borosilicato tipo V60. Diseñado para preparar café de filtro con la precisión y la belleza que tu ritual matutino merece.",
+      "specs": {
+        "h": "Altura",
+        "hv": "22 cm",
+        "w": "Peso",
+        "wv": "1.4 kg",
+        "c": "Capacidad",
+        "cv": "1–2 tazas",
+        "f": "Filtro",
+        "fv": "V60 estándar"
+      },
+      "ctaId": "Ordenar ahora",
+      "ctaSec": "Cómo preparar"
+    },
+    "materials": {
+      "title": "Materiales con intención",
+      "desc": "Cada componente fue seleccionado para crear un equilibrio perfecto entre estética, durabilidad y función.",
+      "m1": "Concreto arquitectónico",
+      "m1d": "Mezcla de alto rendimiento con acabado liso tipo terrazo. Cada base tiene una textura y tonalidad única e irrepetible, formada por los minerales naturales de la mezcla.",
+      "m2": "Madera de cenízaro",
+      "m2d": "Madera costarricense de reforestación, tratada con aceite natural. Su veta cálida y resistente complementa la frialdad del concreto con un contraste orgánico.",
+      "m3": "Vidrio borosilicato",
+      "m3d": "Cono tipo V60 de vidrio resistente al calor con paredes acanaladas que guían el flujo del agua para una extracción uniforme y cristalina."
+    },
+    "brew": {
+      "title": "Tu ritual, elevado",
+      "desc": "Cuatro pasos para una taza perfecta con tu chorreador CAFCO.",
+      "s1": "Calentar",
+      "s1d": "Precalentá el cono con agua a 93°C. Colocá el filtro de papel y enjuagalo para eliminar sabores residuales.",
+      "s2": "Moler",
+      "s2d": "Usá 15g de café en molienda media. Colocalo en el filtro y nivelá la cama de café con un movimiento suave.",
+      "s3": "Florecer",
+      "s3d": "Vertí 30ml de agua en círculos y esperá 30 segundos. Observá cómo el café libera CO₂ y sus aromas se despiertan.",
+      "s4": "Verter",
+      "s4d": "Continuá vertiendo en espiral hasta completar 250ml en 3 minutos. Disfrutá el café más honesto que vas a probar."
+    },
+    "testimonials": {
+      "q1": "Es más que un chorreador — es una pieza de diseño que transforma mi mañana en un ritual. La calidad del concreto y la madera se siente en cada detalle.",
+      "a1": "María José R. — San José, Costa Rica"
+    },
+    "story": {
+      "eyebrow": "Nuestra historia",
+      "title": "Diseño costarricense,<br><em class=\"font-style-italic font-weight-400\">alma cafetalera</em>",
+      "p1": "CAFCO nació de una idea simple: que el acto de preparar café merece un objeto tan cuidado como el grano mismo. Desde San José, Costa Rica, diseñamos y fabricamos a mano cada chorreador como una pieza única.",
+      "p2": "Nuestro concreto arquitectónico se mezcla y vierte artesanalmente. La madera proviene de programas de reforestación local. Y cada pieza se cura durante 28 días antes de salir del taller — porque las cosas buenas toman su tiempo.",
+      "v1n": "28",
+      "v1l": "Días de curado",
+      "v2n": "100%",
+      "v2l": "Hecho a mano",
+      "v3n": "CR",
+      "v3l": "Diseño tico"
+    },
+    "newsletter": {
+      "title": "Suscribite a nuestro mundo",
+      "desc": "Recibí acceso anticipado a nuevos diseños, ediciones limitadas y guías de café.",
+      "placeholder": "tu@email.com",
+      "btn": "Suscribir"
+    },
+    "footer": {
+      "brandDesc": "Chorreadores de café artesanales en concreto y madera. Diseñados y fabricados a mano en Costa Rica.",
+      "c1t": "Comprar",
+      "c1l1": "Chorreador Original",
+      "c1l2": "Accesorios",
+      "c1l3": "Gift Sets",
+      "c2t": "Empresa",
+      "c2l1": "Nosotros",
+      "c2l2": "Sostenibilidad",
+      "c2l3": "Blog",
+      "c3t": "Soporte",
+      "c3l1": "Envíos",
+      "c3l2": "Devoluciones",
+      "c3l3": "Cuidado del producto",
+      "c4t": "Conectar",
+      "bott": "© 2026 CAFCO — San José, Costa Rica. Todos los derechos reservados."
+    }
+  }
+}

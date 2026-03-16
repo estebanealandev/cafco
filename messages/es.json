@@ -1,0 +1,178 @@
+{
+  "Index": {
+    "announcement": "Producción limitada · Pedidos directos por",
+    "announcementWa": "WhatsApp",
+    "announcementAnd": "e",
+    "announcementIg": "Instagram",
+    "nav": {
+      "models": "Modelos",
+      "materials": "Materiales",
+      "preparation": "Preparación",
+      "about": "Nosotros",
+      "order": "Ordenar"
+    },
+    "hero": {
+      "eyebrow": "Hecho a mano en Costa Rica",
+      "title": "Diseñado para<br /><em>rituales lentos</em>",
+      "subtitle": "Chorreadores de concreto artesanales. Una escultura funcional para quienes ven belleza en la pausa.",
+      "ctaPrimary": "Ver modelos",
+      "ctaWa": "Ordenar ahora"
+    },
+    "features": {
+      "f1Title": "Concreto Artesanal",
+      "f1Desc": "Cada pieza única",
+      "f2Title": "Madera de Teca",
+      "f2Desc": "Reforestación local",
+      "f3Title": "Dripper V60 o Bolsa",
+      "f3Desc": "Dos métodos",
+      "f4Title": "Producción Limitada",
+      "f4Desc": "Pedido directo"
+    },
+    "manifesto": "Cada chorreador CAFCO es una estructura mínima, hecha para sostener un <em>ritual cotidiano</em>. El concreto, la madera y el vidrio se unen en un objeto que no es solo útil — es <em>presencia</em>.",
+    "catalog": {
+      "title": "La Colección",
+      "desc": "Dos modelos, dos escalas. El mismo compromiso con la honestidad del material y el detalle.",
+      "tabAll": "Todos",
+      "tabA01": "A01 — Compartir",
+      "tabA02": "A02 — Personal"
+    },
+    "products": {
+      "a01v60": {
+        "eyebrow": "Modelo A01 · Con Dripper V60",
+        "name": "Chorreador <em>A01</em>",
+        "badge": "Insignia",
+        "tagline": "El primero de su serie.",
+        "desc": "Concebido como una escultura funcional, fue diseñado para compartir el ritual del café con los demás — una pieza que invita a la pausa, la conversación y la presencia. Robusto, sobrio y brutalista: el A01 es el inicio de la colección CAFCO y una referencia al vivir de la arquitectura.",
+        "includesTitle": "¿Qué incluye?",
+        "include1": "Bloque de concreto (6 kg)",
+        "include2": "Soporte de madera (Teca)",
+        "include3": "Dripper V60 (Vidrio)",
+        "price": "₡50,000",
+        "priceNote": "IVI incluido",
+        "cta": "Pedir por WhatsApp"
+      },
+      "a01bag": {
+        "eyebrow": "Modelo A01 · Con Bolsa de Tela",
+        "name": "Chorreador <em>A01</em>",
+        "tagline": "El primero de su serie.",
+        "desc": "La misma base monolítica de concreto texturizado con forma simétrica y detalle cálido en madera de teca. Esta versión incluye una bolsa de tela artesanal — para quienes prefieren el método tradicional costarricense de chorrear café.",
+        "includesTitle": "¿Qué incluye?",
+        "include1": "Bloque de concreto (6 kg)",
+        "include2": "Soporte de madera (Teca)",
+        "include3": "Bolsa de tela",
+        "price": "₡45,000",
+        "priceNote": "IVI incluido",
+        "cta": "Pedir por WhatsApp"
+      },
+      "a02v60": {
+        "eyebrow": "Modelo A02 · Con Dripper V60",
+        "name": "Chorreador <em>A02</em>",
+        "badge": "Compacto",
+        "tagline": "Diseñado para no compartir el café.",
+        "desc": "El A02 nace como una versión más portátil, pensada para acompañarte donde estés: en casa, en la oficina o en cualquier espacio donde el ritual del café aún tenga su lugar. Una escultura funcional para una sola taza, un recordatorio de que incluso en lo cotidiano, el diseño puede sostener la pausa.",
+        "includesTitle": "¿Qué incluye?",
+        "include1": "Bloque de concreto (2 kg)",
+        "include2": "Soporte de madera (Teca)",
+        "include3": "Dripper V60 (Vidrio)",
+        "price": "₡35,000",
+        "priceNote": "IVI incluido",
+        "cta": "Pedir por WhatsApp"
+      },
+      "a02bag": {
+        "eyebrow": "Modelo A02 · Con Bolsa de Tela",
+        "name": "Chorreador <em>A02</em>",
+        "tagline": "Diseñado para no compartir el café.",
+        "desc": "Compacto, funcional y con la misma presencia arquitectónica del A01. Mantiene la estructura de concreto y el detalle cálido en madera, pero en una escala más ligera, con la bolsa de tela para el método costarricense tradicional.",
+        "includesTitle": "¿Qué incluye?",
+        "include1": "Bloque de concreto (2 kg)",
+        "include2": "Soporte de madera (Teca)",
+        "include3": "Bolsa de tela",
+        "price": "₡30,000",
+        "priceNote": "IVI incluido",
+        "cta": "Pedir por WhatsApp"
+      }
+    },
+    "compare": {
+      "scale": "Escala",
+      "weight": "Peso",
+      "wood": "Madera",
+      "filter": "Filtro",
+      "price": "Precio",
+      "sharing": "Para compartir",
+      "personal": "Personal",
+      "teca": "Teca",
+      "dripperV60": "Dripper V60 vidrio",
+      "clothBag": "Bolsa de tela"
+    },
+    "materials": {
+      "title": "Todo está en el detalle",
+      "desc": "En CAFCO ponemos en valor esos pequeños aspectos que definen la esencia de un objeto: su textura, su peso, su forma real.",
+      "m1": "Concreto arquitectónico",
+      "m1d": "Mezcla de alto rendimiento con acabado texturizado. Cada base tiene una tonalidad única — sin ocultar imperfecciones, sin disfrazar el proceso. La honestidad del material es el pilar.",
+      "m2": "Madera de teca",
+      "m2d": "Madera costarricense de reforestación, tratada con aceite natural. Su veta cálida complementa la frialdad del concreto con un contraste orgánico que sólo el tiempo sabe dar.",
+      "m3": "Vidrio borosilicato",
+      "m3d": "Dripper tipo V60 resistente al calor con paredes acanaladas para una extracción uniforme. Alternativa disponible: bolsa de tela artesanal para el método costarricense."
+    },
+    "brew": {
+      "title": "Tu ritual, elevado",
+      "desc": "Cuatro pasos para una taza perfecta con tu chorreador CAFCO.",
+      "s1": "Calentar",
+      "s1d": "Precalentá el cono con agua a 93°C. Colocá el filtro y enjuagalo para eliminar sabores residuales.",
+      "s2": "Moler",
+      "s2d": "Usá 15g de café en molienda media. Colocalo en el filtro y nivelá la cama con un movimiento suave.",
+      "s3": "Florecer",
+      "s3d": "Vertí 30ml de agua en círculos y esperá 30 segundos. Observá cómo el café libera CO₂ y se despierta.",
+      "s4": "Verter",
+      "s4d": "Continuá vertiendo en espiral hasta completar 250ml en 3 minutos. Disfrutá el café más honesto."
+    },
+    "audience": {
+      "title": "¿Para quién es <em>este objeto?</em>",
+      "neg1": "No es para todo el mundo.",
+      "neg2": "No es rápido.",
+      "neg3": "No es liviano.",
+      "neg4": "No es desechable.",
+      "pos1": "Es para quienes disfrutan el café como un acto consciente.",
+      "pos2": "Para quienes valoran los detalles, el diseño, la materialidad y el silencio.",
+      "pos3": "Para quienes ven belleza en la pausa y carácter en lo simple.",
+      "pos4": "Este objeto es para quienes no solo quieren preparar café, sino diseñar un momento.",
+      "pos5": "CAFCO es para quienes eligen lo que compran como eligen lo que piensan: con cuidado.",
+      "cta": "Si esto resuena con vos, CAFCO es tu mejor opción.",
+      "ctaBtn": "Escribinos"
+    },
+    "testimonials": {
+      "q1": "Es más que un chorreador — es una pieza de diseño que transforma mi mañana en un ritual. La calidad del concreto y la madera se siente en cada detalle.",
+      "a1": "María José R. — San José, Costa Rica"
+    },
+    "story": {
+      "eyebrow": "Nuestra historia",
+      "title": "La belleza está en lo simple, lo verdadero y <em>lo bien hecho</em>",
+      "p1": "En arquitectura, la honestidad del material es algo que muy pocas personas logran apreciar. Por eso, en CAFCO ponemos en valor esos pequeños aspectos que definen la esencia de un objeto: su textura, su peso, su forma real.",
+      "p2": "Cada pieza nace desde el respeto por lo que es — sin ocultar imperfecciones, sin disfrazar el proceso — porque creemos que el diseño también puede ser sincero.",
+      "v1n": "28",
+      "v1l": "Días de curado",
+      "v2n": "100%",
+      "v2l": "Hecho a mano",
+      "v3n": "CR",
+      "v3l": "Diseño tico"
+    },
+    "newsletter": {
+      "title": "Suscribite a nuestro mundo",
+      "desc": "Acceso anticipado a nuevos diseños, ediciones limitadas y rituales de café.",
+      "placeholder": "tu@email.com",
+      "btn": "Suscribir"
+    },
+    "footer": {
+      "brandDesc": "Chorreadores de café artesanales en concreto y madera de teca. Diseñados y fabricados a mano en Costa Rica.",
+      "c1t": "Comprar",
+      "c1l1": "Chorreador A01",
+      "c1l2": "Chorreador A02",
+      "c2t": "Empresa",
+      "c2l1": "Nosotros",
+      "c2l2": "Materiales",
+      "c2l3": "Guía de preparación",
+      "c3t": "Conectar",
+      "bott": "© 2026 CAFCO — San José, Costa Rica. Todos los derechos reservados."
+    }
+  }
+}

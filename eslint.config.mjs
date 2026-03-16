@@ -1,18 +1,15 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import antfu from '@antfu/eslint-config'
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
-]);
-
-export default eslintConfig;
+export default antfu({
+  react: true,
+  typescript: { tsconfigPath: 'tsconfig.json' },
+  nextjs: true,
+  stylistic: { indent: 2, quotes: 'single', semi: false },
+  formatters: { css: true, html: true },
+  rules: {
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'ts/no-explicit-any': 'error',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': 'error',
+  },
+})
