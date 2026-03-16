@@ -193,11 +193,13 @@ export default function Home() {
           {new Array(4).fill(null).map((_, i) => (
             /* eslint-disable-next-line react/no-array-index-key */
             <span key={`ann-item-${i}`} className="announcement-item">
-              {t("announcement")}{" "}
+              {t("announcement").split("·")[0].trim()}
+              <span className="announcement-dot">•</span>
+              {t("announcement").split("·")[1]?.trim()}&nbsp;
               <a href={WA_BASE} target="_blank" rel="noopener noreferrer">
                 {t("announcementWa")}
-              </a>{" "}
-              {t("announcementAnd")}{" "}
+              </a>
+              &nbsp;{t("announcementAnd")}&nbsp;
               <a href={IG_URL} target="_blank" rel="noopener noreferrer">
                 {t("announcementIg")}
               </a>
