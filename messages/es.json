@@ -117,14 +117,14 @@
     "brew": {
       "title": "Tu ritual, elevado",
       "desc": "Cuatro pasos para una taza perfecta con tu chorreador CAFCO.",
-      "s1": "Calentar",
-      "s1d": "Precalentá el cono con agua a 93°C. Colocá el filtro y enjuagalo para eliminar sabores residuales.",
-      "s2": "Moler",
-      "s2d": "Usá 15g de café en molienda media. Colocalo en el filtro y nivelá la cama con un movimiento suave.",
-      "s3": "Florecer",
-      "s3d": "Vertí 30ml de agua en círculos y esperá 30 segundos. Observá cómo el café libera CO₂ y se despierta.",
-      "s4": "Verter",
-      "s4d": "Continuá vertiendo en espiral hasta completar 250ml en 3 minutos. Disfrutá el café más honesto."
+      "s1": "Calentar agua",
+      "s1d": "Llevá el agua a unos 93°C y precalentá el cono mientras enjuagás el filtro para limpiar sabores residuales.",
+      "s2": "Colocar café",
+      "s2d": "Agregá 15g de café de molienda media en el filtro y nivelá la cama con pequeños golpes suaves.",
+      "s3": "Verter",
+      "s3d": "Iniciá el vertido de agua en círculos lentos, constantes y controlados, completando la extracción en 3 minutos.",
+      "s4": "Disfrutar",
+      "s4d": "Retirá el filtro con cuidado, serví en tu taza favorita y disfrutá el sabor honesto de tu café sin prisa."
     },
     "audience": {
       "title": "¿Para quién es <em>este objeto?</em>",

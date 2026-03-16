@@ -117,14 +117,14 @@
     "brew": {
       "title": "Votre rituel, élevé",
       "desc": "Quatre étapes pour une tasse parfaite avec votre cafetière CAFCO.",
-      "s1": "Chauffer",
-      "s1d": "Préchauffez le cône avec de l'eau à 93°C. Placez le filtre et rincez-le pour éliminer les goûts résiduels.",
-      "s2": "Moudre",
-      "s2d": "Utilisez 15g de café à mouture moyenne. Placez-le dans le filtre et nivelez délicatement.",
-      "s3": "Fleurir",
-      "s3d": "Versez 30ml d'eau en cercles et attendez 30 secondes. Regardez le café libérer son CO₂ et s'éveiller.",
-      "s4": "Verser",
-      "s4d": "Continuez à verser en spirale jusqu'à 250ml en 3 minutes. Dégustez le café le plus authentique."
+      "s1": "Chauffer l'eau",
+      "s1d": "Chauffez l'eau à environ 93°C et préchauffez le cône tout en rinçant le filtre pour éliminer les goûts résiduels.",
+      "s2": "Ajouter le café",
+      "s2d": "Ajoutez 15g de café à mouture moyenne dans le filtre et nivelez le lit avec de légers tapotements.",
+      "s3": "Verser",
+      "s3d": "Commencez à verser l'eau en cercles lents, réguliers et contrôlés, en complétant l'extraction en 3 minutes.",
+      "s4": "Déguster",
+      "s4d": "Retirez délicatement le filtre, servez dans votre tasse préférée et profitez de la saveur honnête de votre café."
     },
     "audience": {
       "title": "Pour qui est <em>cet objet ?</em>",

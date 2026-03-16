@@ -117,14 +117,14 @@
     "brew": {
       "title": "Your ritual, elevated",
       "desc": "Four steps for a perfect cup with your CAFCO pour-over.",
-      "s1": "Warm up",
-      "s1d": "Preheat the cone with water at 93°C. Place the filter and rinse it to remove residual flavors.",
-      "s2": "Grind",
-      "s2d": "Use 15g of medium-ground coffee. Place it in the filter and level the bed with a gentle shake.",
-      "s3": "Bloom",
-      "s3d": "Pour 30ml of water in circles and wait 30 seconds. Watch the coffee release CO₂ and awaken.",
-      "s4": "Pour",
-      "s4d": "Continue pouring in spirals until you reach 250ml in 3 minutes. Enjoy the most honest coffee."
+      "s1": "Heat water",
+      "s1d": "Heat the water to about 93°C and preheat the cone while rinsing the filter to remove residual flavors.",
+      "s2": "Add coffee",
+      "s2d": "Add 15g of medium-ground coffee into the filter and level the bed with a gentle shake.",
+      "s3": "Pour",
+      "s3d": "Begin pouring the water in slow, steady, and controlled circles, completing the extraction in 3 minutes.",
+      "s4": "Enjoy",
+      "s4d": "Carefully remove the filter, serve in your favorite mug, and enjoy the honest taste of your coffee unhurried."
     },
     "audience": {
       "title": "Who is <em>this object for?</em>",

@@ -117,14 +117,14 @@
     "brew": {
       "title": "Ihr Ritual, verfeinert",
       "desc": "Vier Schritte zu einer perfekten Tasse mit Ihrem CAFCO Pour-Over.",
-      "s1": "Erhitzen",
-      "s1d": "Heizen Sie den Kegel mit Wasser auf 93°C vor. Setzen Sie den Filter ein und spülen Sie ihn aus.",
-      "s2": "Mahlen",
-      "s2d": "Verwenden Sie 15g mittelfein gemahlenen Kaffee. Betten Sie ihn gleichmäßig im Filter ein.",
-      "s3": "Aufblühen",
-      "s3d": "Gießen Sie 30ml Wasser in Kreisen ein und warten Sie 30 Sekunden.",
-      "s4": "Aufgießen",
-      "s4d": "Gießen Sie weiter in Spiralen, bis Sie in 3 Minuten 250ml erreichen. Genießen Sie ehrlichsten Kaffee."
+      "s1": "Wasser erhitzen",
+      "s1d": "Erhitzen Sie das Wasser auf ca. 93°C, wärmen Sie den Kegel vor und spülen Sie den Filter aus.",
+      "s2": "Kaffee hinzufügen",
+      "s2d": "Geben Sie 15g mittelfein gemahlenen Kaffee in den Filter und klopfen Sie ihn sanft eben.",
+      "s3": "Aufgießen",
+      "s3d": "Gießen Sie das Wasser in langsamen, kontrollierten Kreisen ein und beenden Sie die Extraktion in 3 Minuten.",
+      "s4": "Genießen",
+      "s4d": "Entfernen Sie vorsichtig den Filter, gießen Sie in Ihre Lieblingstasse ein und genießen Sie den Kaffee in aller Ruhe."
     },
     "audience": {
       "title": "Für wen ist <em>dieses Objekt?</em>",
