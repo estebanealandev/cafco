@@ -54,7 +54,8 @@
       "a01bag": {
         "eyebrow": "Model A01 · With Cloth Bag",
         "name": "Pour-over <em>A01</em>",
-        "tagline": "The first of its series.",
+        "badge": "Best Seller",
+        "tagline": "The first of its series and local favorite.",
         "desc": "The same monolithic textured concrete base with a symmetrical shape and warm teak wood detail. This version includes a traditional handcrafted cloth bag — for those who prefer the traditional Costa Rican method of brewing coffee.",
         "includesTitle": "What's included?",
         "include1": "Concrete block (6 kg)",
@@ -81,7 +82,8 @@
       "a02bag": {
         "eyebrow": "Model A02 · With Cloth Bag",
         "name": "Pour-over <em>A02</em>",
-        "tagline": "Designed to not share coffee.",
+        "badge": "Favorite",
+        "tagline": "The most requested individual option.",
         "desc": "Compact, functional, and with the same architectural presence as the A01. It maintains the concrete structure and warm wood detail, but on a lighter scale, featuring the cloth bag for the traditional Costa Rican method.",
         "includesTitle": "What's included?",
         "include1": "Concrete block (2 kg)",

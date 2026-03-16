@@ -54,7 +54,8 @@
       "a01bag": {
         "eyebrow": "Modell A01 · Mit Stoffbeutel",
         "name": "Kaffeebereiter <em>A01</em>",
-        "tagline": "Der Erste seiner Serie.",
+        "badge": "Bestseller",
+        "tagline": "Der Erste seiner Serie und lokaler Favorit.",
         "desc": "Die gleiche monolithische Basis aus strukturiertem Beton. Diese Version enthält einen handgefertigten Stoffbeutel — für diejenigen, die die traditionelle costa-ricanische Methode bevorzugen.",
         "includesTitle": "Was ist enthalten?",
         "include1": "Betonblock (6 kg)",
@@ -81,7 +82,8 @@
       "a02bag": {
         "eyebrow": "Modell A02 · Mit Stoffbeutel",
         "name": "Kaffeebereiter <em>A02</em>",
-        "tagline": "Für Kaffeegenuss allein entworfen.",
+        "badge": "Favorit",
+        "tagline": "Die gefragteste Einzeloption.",
         "desc": "Kompakt, funktional und mit der gleichen architektonischen Präsenz wie der A01. Behält die Betonstruktur in einem leichteren Maßstab bei.",
         "includesTitle": "Was ist enthalten?",
         "include1": "Betonblock (2 kg)",

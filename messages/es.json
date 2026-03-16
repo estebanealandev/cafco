@@ -54,7 +54,8 @@
       "a01bag": {
         "eyebrow": "Modelo A01 · Con Bolsa de Tela",
         "name": "Chorreador <em>A01</em>",
-        "tagline": "El primero de su serie.",
+        "badge": "Más vendido",
+        "tagline": "El primero de su serie y el favorito local.",
         "desc": "La misma base monolítica de concreto texturizado con forma simétrica y detalle cálido en madera de teca. Esta versión incluye una bolsa de tela artesanal — para quienes prefieren el método tradicional costarricense de chorrear café.",
         "includesTitle": "¿Qué incluye?",
         "include1": "Bloque de concreto (6 kg)",
@@ -81,7 +82,8 @@
       "a02bag": {
         "eyebrow": "Modelo A02 · Con Bolsa de Tela",
         "name": "Chorreador <em>A02</em>",
-        "tagline": "Diseñado para no compartir el café.",
+        "badge": "Favorito",
+        "tagline": "La opción individual más pedida.",
         "desc": "Compacto, funcional y con la misma presencia arquitectónica del A01. Mantiene la estructura de concreto y el detalle cálido en madera, pero en una escala más ligera, con la bolsa de tela para el método costarricense tradicional.",
         "includesTitle": "¿Qué incluye?",
         "include1": "Bloque de concreto (2 kg)",

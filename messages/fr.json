@@ -54,7 +54,8 @@
       "a01bag": {
         "eyebrow": "Modèle A01 · Avec Sac en Tissu",
         "name": "Cafetière <em>A01</em>",
-        "tagline": "Le premier de sa série.",
+        "badge": "Le plus vendu",
+        "tagline": "Le premier de sa série et le favori local.",
         "desc": "La même base monolithique en béton texturé et bois de teck. Cette version inclut un sac en tissu artisanal — pour ceux qui préfèrent la méthode traditionnelle costaricaine.",
         "includesTitle": "Ce qui est inclus ?",
         "include1": "Bloc de béton (6 kg)",
@@ -81,7 +82,8 @@
       "a02bag": {
         "eyebrow": "Modèle A02 · Avec Sac en Tissu",
         "name": "Cafetière <em>A02</em>",
-        "tagline": "Conçu pour une pause en solo.",
+        "badge": "Favori",
+        "tagline": "L'option individuelle la plus demandée.",
         "desc": "Compact et fonctionnel avec la même présence architecturale que le A01. Maintient la structure en béton et le bois chaleureux dans une échelle plus légère avec le sac en tissu de la méthode costaricaine.",
         "includesTitle": "Ce qui est inclus ?",
         "include1": "Bloc de béton (2 kg)",
