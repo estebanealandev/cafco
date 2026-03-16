@@ -20,7 +20,7 @@ const productImages = {
   a02bag:
     "https://static.wixstatic.com/media/dd3e2a_19b1e63281cc465eb45a36a942d964ad~mv2.png/v1/fill/w_800,h_988,al_c,q_90,enc_avif,quality_auto/A02_4.png",
   audienceImg:
-    "https://static.wixstatic.com/media/dd3e2a_ef54d6f223744553943554738ee99ac4~mv2.png/v1/fill/w_800,h_982,al_c,q_90,enc_avif,quality_auto/A01_A02_JUNTOS.png",
+    "https://pub-920fda90d8d340c599bf7793a05eb9fb.r2.dev/cafcodos%20models.webp",
   storyImg:
     "https://static.wixstatic.com/media/dd3e2a_beddd3b6f29c49e1ae3df2a09c1e7a59~mv2.png/v1/fill/w_800,h_982,al_c,q_90,enc_avif,quality_auto/DETALLE%20DE%20TEXTURA%202.png",
   hero: "A02_2.png",
