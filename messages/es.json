@@ -48,7 +48,7 @@
         "include2": "Soporte de madera (Teca)",
         "include3": "Dripper V60 (Vidrio)",
         "price": "₡50,000",
-        "priceNote": "IVI incluido",
+        "priceNote": "IVA incluido",
         "cta": "Pedir por WhatsApp"
       },
       "a01bag": {
@@ -61,7 +61,7 @@
         "include2": "Soporte de madera (Teca)",
         "include3": "Bolsa de tela",
         "price": "₡45,000",
-        "priceNote": "IVI incluido",
+        "priceNote": "IVA incluido",
         "cta": "Pedir por WhatsApp"
       },
       "a02v60": {
@@ -75,7 +75,7 @@
         "include2": "Soporte de madera (Teca)",
         "include3": "Dripper V60 (Vidrio)",
         "price": "₡35,000",
-        "priceNote": "IVI incluido",
+        "priceNote": "IVA incluido",
         "cta": "Pedir por WhatsApp"
       },
       "a02bag": {
@@ -88,7 +88,7 @@
         "include2": "Soporte de madera (Teca)",
         "include3": "Bolsa de tela",
         "price": "₡30,000",
-        "priceNote": "IVI incluido",
+        "priceNote": "IVA incluido",
         "cta": "Pedir por WhatsApp"
       }
     },
