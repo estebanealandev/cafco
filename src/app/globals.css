@@ -1316,8 +1316,13 @@ ul {
   .product-card:nth-child(even) {
     direction: ltr;
   }
+  /* Product card info: add horizontal padding when stacked */
+  .product-card-info {
+    padding: var(--space-md) var(--space-md);
+  }
   .brew-steps {
     grid-template-columns: 1fr 1fr;
+    padding: 0 var(--space-sm);
   }
   .brew-step:not(:last-child)::after {
     display: none;
@@ -1363,9 +1368,21 @@ ul {
   }
   .brew-steps {
     grid-template-columns: 1fr;
+    padding: 0 var(--space-md);
+  }
+  .brew-step {
+    padding: var(--space-lg) var(--space-sm);
+  }
+  .product-card-info {
+    padding: var(--space-md) var(--space-md);
+  }
+  /* Hero: shift focus to show chorreador (right side) on portrait mobile */
+  .hero-product-image {
+    object-position: 65% center;
   }
   .product-card-actions {
     flex-direction: column;
+    padding: 0 var(--space-md);
   }
   .product-card-actions .btn {
     width: 100%;
