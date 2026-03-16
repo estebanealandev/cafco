@@ -189,16 +189,22 @@ export default function Home() {
     <>
       {/* ═══════════════ ANNOUNCEMENT ═══════════════ */}
       <div className="announcement">
-        <span>
-          {t("announcement")}{" "}
-          <a href={WA_BASE} target="_blank" rel="noopener noreferrer">
-            {t("announcementWa")}
-          </a>{" "}
-          {t("announcementAnd")}{" "}
-          <a href={IG_URL} target="_blank" rel="noopener noreferrer">
-            {t("announcementIg")}
-          </a>
-        </span>
+        <div className="announcement-track">
+          {new Array(4).fill(null).map((_, i) => (
+            /* eslint-disable-next-line react/no-array-index-key */
+            <span key={`ann-item-${i}`} className="announcement-item">
+              {t("announcement")}{" "}
+              <a href={WA_BASE} target="_blank" rel="noopener noreferrer">
+                {t("announcementWa")}
+              </a>{" "}
+              {t("announcementAnd")}{" "}
+              <a href={IG_URL} target="_blank" rel="noopener noreferrer">
+                {t("announcementIg")}
+              </a>
+              <span className="announcement-dot">•</span>
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* ═══════════════ NAV ═══════════════ */}
