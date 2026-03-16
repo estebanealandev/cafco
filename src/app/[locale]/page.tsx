@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useSmoothScroll } from "@/lib/gsap-setup";
 import { useEffect, useState, useTransition } from "react";
 import { useRouter, usePathname } from "@/i18n/routing";
+import Image from "next/image";
 
 const WA_NUMBER = "50661073836";
 const WA_BASE = `https://wa.me/${WA_NUMBER}`;
@@ -322,10 +323,14 @@ export default function Home() {
       {/* ═══════════════ HERO ═══════════════ */}
       <section className="hero" id="inicio">
         <div className="hero-bg">
-          <img
+          <Image
             src="https://pub-920fda90d8d340c599bf7793a05eb9fb.r2.dev/hero-1.webp"
             alt="Chorreador CAFCO"
             className="hero-product-image"
+            fill
+            priority
+            sizes="100vw"
+            quality={90}
           />
         </div>
         <div className="hero-overlay"></div>
@@ -433,7 +438,14 @@ export default function Home() {
               data-model={product.model}
             >
               <div className="product-card-gallery">
-                <img src={product.img} alt={`CAFCO ${product.key}`} />
+                <Image
+                  src={product.img}
+                  alt={`CAFCO ${product.key}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={85}
+                  loading={i === 0 ? "eager" : "lazy"}
+                />
                 {p.badge && <span className="product-badge">{p.badge}</span>}
               </div>
               <div className="product-card-info">
@@ -640,9 +652,12 @@ export default function Home() {
               </div>
             </div>
             <div className="audience-image reveal reveal-d2">
-              <img
+              <Image
                 src={productImages.audienceImg}
                 alt="Chorreadores CAFCO A01 y A02 juntos"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={85}
               />
             </div>
           </div>
@@ -665,9 +680,12 @@ export default function Home() {
       <section className="story container" id="nosotros">
         <div className="story-grid">
           <div className="story-image reveal">
-            <img
+            <Image
               src={productImages.storyImg}
               alt="Detalle de textura del concreto CAFCO"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={85}
             />
           </div>
           <div className="story-content reveal reveal-d2">

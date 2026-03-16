@@ -990,10 +990,9 @@ ul {
   background: var(--color-bg-cool);
   border-radius: 2px;
   overflow: hidden;
+  position: relative;
 }
 .audience-image img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
@@ -1051,10 +1050,9 @@ ul {
   background: var(--color-bg-warm);
   border-radius: 2px;
   overflow: hidden;
+  position: relative;
 }
 .story-image img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 .story-content .eyebrow {
