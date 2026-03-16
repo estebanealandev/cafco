@@ -211,7 +211,8 @@ ul {
 }
 
 /* Menu button — matches the dark block in the reference */
-.menu-toggle {
+.menu-toggle,
+.locale-switcher {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -229,10 +230,29 @@ ul {
     border-color var(--duration);
   cursor: pointer;
 }
-.menu-toggle:hover {
+.menu-toggle:hover,
+.locale-switcher:hover {
   background: rgba(245, 241, 236, 0.14);
   border-color: rgba(245, 241, 236, 0.25);
 }
+.locale-select {
+  background: transparent;
+  color: inherit;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+}
+.locale-select option {
+  background: #1a1612;
+  color: rgba(245, 241, 236, 0.85);
+}
+
 .menu-toggle-lines {
   display: flex;
   flex-direction: column;

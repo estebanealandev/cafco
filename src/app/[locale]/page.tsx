@@ -1,8 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { useSmoothScroll } from "@/lib/gsap-setup";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
+import { useRouter, usePathname } from "@/i18n/routing";
 
 const WA_NUMBER = "50661073836";
 const WA_BASE = `https://wa.me/${WA_NUMBER}`;
@@ -75,6 +76,36 @@ const allProducts: ProductDef[] = [
       "Hola%2C%20quiero%20ordenar%20el%20Chorreador%20A02%20con%20Bolsa%20de%20Tela",
   },
 ];
+
+function LocaleSwitcher() {
+  const locale = useLocale();
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const pathname = usePathname();
+
+  function onSelectChange(nextLocale: string) {
+    startTransition(() => {
+      router.replace(pathname, { locale: nextLocale });
+    });
+  }
+
+  return (
+    <div className="locale-switcher">
+      <select
+        defaultValue={locale}
+        disabled={isPending}
+        onChange={(e) => onSelectChange(e.target.value)}
+        className="locale-select"
+        aria-label="Seleccionar idioma"
+      >
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+      </select>
+    </div>
+  );
+}
 
 export default function Home() {
   const t = useTranslations("Index");
@@ -212,6 +243,7 @@ export default function Home() {
             >
               <WaIcon /> {t("nav.order")}
             </a>
+            <LocaleSwitcher />
             <button
               className="menu-toggle"
               aria-label="Menú"
@@ -274,6 +306,9 @@ export default function Home() {
         >
           {t("nav.about")}
         </a>
+        <div style={{ marginTop: "2rem" }}>
+          <LocaleSwitcher />
+        </div>
         <a
           href={WA_BASE}
           target="_blank"
