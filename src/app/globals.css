@@ -200,13 +200,15 @@ ul {
   width: 100%;
 }
 .nav-logo {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: 1.55rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  color: rgba(245, 241, 236, 0.95);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   justify-self: center;
+}
+.nav-logo-img {
+  height: 1.35rem; /* Optical match for 1.55rem text */
+  width: auto;
+  object-fit: contain;
 }
 .nav-actions {
   display: flex;
@@ -1208,9 +1210,13 @@ ul {
   margin-bottom: var(--space-3xl);
 }
 .footer-brand .nav-logo {
-  font-size: 1.3rem;
   margin-bottom: var(--space-md);
-  display: block;
+  display: flex;
+  align-items: center;
+}
+.footer-brand .nav-logo-img {
+  height: 1.15rem; /* Optical match for 1.3rem text */
+  filter: brightness(0) invert(0.15); /* Darken light logo for light footer */
 }
 .footer-brand p {
   font-size: 0.86rem;

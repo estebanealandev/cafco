@@ -241,7 +241,11 @@ export default function Home() {
             </li>
           </ul>
           <a href="#" className="nav-logo" onClick={(e) => e.preventDefault()}>
-            CAFCO
+            <img
+              src="https://pub-920fda90d8d340c599bf7793a05eb9fb.r2.dev/cafcologoligth.svg"
+              alt="CAFCO"
+              className="nav-logo-img"
+            />
           </a>
           <div className="nav-actions">
             <a
@@ -745,7 +749,13 @@ export default function Home() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <span className="nav-logo">CAFCO</span>
+              <span className="nav-logo">
+                <img
+                  src="https://pub-920fda90d8d340c599bf7793a05eb9fb.r2.dev/cafcologoligth.svg"
+                  alt="CAFCO"
+                  className="nav-logo-img"
+                />
+              </span>
               <p>{t("footer.brandDesc")}</p>
             </div>
             <div className="footer-col">
