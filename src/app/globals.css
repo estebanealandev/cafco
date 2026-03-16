@@ -329,7 +329,7 @@ ul {
    ═══════════════════════════════════════════ */
 .hero {
   position: relative;
-  height: 100svh;
+  height: calc(100svh - 100px);
   min-height: 600px;
   display: flex;
   align-items: center;
@@ -442,7 +442,7 @@ ul {
   position: absolute;
   bottom: var(--space-lg);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(20px);
   z-index: 3;
   display: flex;
   align-items: center;
@@ -457,7 +457,7 @@ ul {
     color 0.3s,
     transform 0.3s;
   opacity: 0;
-  animation: fadeUp 0.8s var(--ease-smooth) 1.8s forwards;
+  animation: fadeUpCenter 0.8s var(--ease-smooth) 1.8s forwards;
   cursor: pointer;
 }
 .hero-scroll-arrow:hover {
@@ -490,6 +490,13 @@ ul {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpCenter {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }
 
