@@ -100,7 +100,8 @@ ul {
 .announcement {
   background: rgba(26, 22, 18, 0.92);
   color: rgba(245, 241, 236, 0.75);
-  height: 38px;
+  min-height: 38px;
+  padding: 6px var(--space-md);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -584,7 +585,8 @@ ul {
    CATALOG & SECTION HEADERS
    ═══════════════════════════════════════════ */
 .catalog {
-  padding: var(--space-3xl) 0;
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
 }
 .catalog-header {
   text-align: center;
@@ -879,7 +881,8 @@ ul {
    BREW GUIDE
    ═══════════════════════════════════════════ */
 .brew-guide {
-  padding: var(--space-3xl) 0;
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
 }
 .brew-steps {
   display: grid;
@@ -1037,7 +1040,8 @@ ul {
    STORY / ABOUT
    ═══════════════════════════════════════════ */
 .story {
-  padding: var(--space-3xl) 0;
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
 }
 .story-grid {
   display: grid;
