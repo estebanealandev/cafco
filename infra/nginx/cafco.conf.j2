@@ -36,7 +36,7 @@ server {
     # listen 443 quic reuseport;
     # listen [::]:443 quic reuseport;
 
-    server_name {{ app_server_name | default(app_domain) }}{% for name in app_extra_server_names | default([]) %} {{ name }}{% endfor %};
+    server_name {{ app_server_name | default(app_domain) }} www.{{ app_domain }}{% for name in app_extra_server_names | default([]) %} {{ name }}{% endfor %};
     server_tokens off;
     client_max_body_size {{ nginx_client_max_body_size | default('10m') }};
 

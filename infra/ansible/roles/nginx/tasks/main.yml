@@ -79,20 +79,20 @@
     owner: root
     group: root
     mode: "0644"
-  notify: Reload nginx
+  notify: Restart nginx
 
 - name: Enable Cafco Nginx site
   ansible.builtin.file:
     src: /etc/nginx/sites-available/cafco.conf
     dest: /etc/nginx/sites-enabled/cafco.conf
     state: link
-  notify: Reload nginx
+  notify: Restart nginx
 
 - name: Disable default Nginx site
   ansible.builtin.file:
     path: /etc/nginx/sites-enabled/default
     state: absent
-  notify: Reload nginx
+  notify: Restart nginx
 
 - name: Configure Nginx logrotate
   ansible.builtin.copy:
