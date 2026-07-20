@@ -1,0 +1,7 @@
+---
+- name: Apply Cafco host hardening
+  hosts: web
+  become: yes
+  roles:
+    - common
+    - harden

@@ -1,0 +1,27 @@
+---
+- name: Install PM2 globally
+  ansible.builtin.command: "npm install -g pm2@{{ pm2_version }}"
+  register: cafco_pm2_install
+  changed_when: "'changed' in cafco_pm2_install.stdout or 'added' in cafco_pm2_install.stdout or 'updated' in cafco_pm2_install.stdout"
+
+- name: Ensure PM2 home exists for deploy user
+  ansible.builtin.file:
+    path: "/home/{{ app_user }}/.pm2"
+    state: directory
+    owner: "{{ app_user }}"
+    group: "{{ app_user }}"
+    mode: "0755"
+
+- name: Configure PM2 startup unit for deploy user
+  ansible.builtin.command: "pm2 startup systemd -u {{ app_user }} --hp /home/{{ app_user }}"
+  args:
+    creates: "/etc/systemd/system/pm2-{{ app_user }}.service"
+  environment:
+    PATH: "/usr/local/bin:/usr/bin:/bin"
+
+- name: Enable PM2 deploy systemd unit
+  ansible.builtin.systemd:
+    name: "pm2-{{ app_user }}"
+    enabled: yes
+    daemon_reload: yes
+  failed_when: false

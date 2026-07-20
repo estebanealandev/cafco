@@ -1,0 +1,94 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      healthcheck_url:
+        description: 'URL HTTPS para validar el deploy. Si se omite, usa https://DEPLOY_HOST/.'
+        required: false
+        type: string
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+env:
+  DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+  DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+  DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+  REMOTE_DIR: /tmp/cafco-deploy-${{ github.sha }}
+
+jobs:
+  deploy:
+    name: Deploy to Hetzner VPS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate required secrets
+        shell: bash
+        run: |
+          test -n "$DEPLOY_HOST" || (echo "Missing secret DEPLOY_HOST" && exit 1)
+          test -n "$DEPLOY_USER" || (echo "Missing secret DEPLOY_USER" && exit 1)
+          test -n "$DEPLOY_SSH_KEY" || (echo "Missing secret DEPLOY_SSH_KEY" && exit 1)
+
+      - name: Configure SSH
+        shell: bash
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+          cat > ~/.ssh/config <<EOF
+          Host cafco-production
+            HostName $DEPLOY_HOST
+            User $DEPLOY_USER
+            IdentityFile ~/.ssh/deploy_key
+            IdentitiesOnly yes
+            StrictHostKeyChecking yes
+          EOF
+
+      - name: Check SSH connectivity
+        run: ssh cafco-production "hostname && whoami && mkdir -p '$REMOTE_DIR'"
+
+      - name: Sync repository to server
+        run: |
+          rsync -az --delete \
+            --exclude ".git/" \
+            --exclude "node_modules/" \
+            --exclude ".next/" \
+            --exclude ".env" \
+            --exclude ".env.*" \
+            ./ cafco-production:"$REMOTE_DIR"/
+
+      - name: Run deploy script on server
+        shell: bash
+        run: |
+          ssh cafco-production "REMOTE_DIR='$REMOTE_DIR' bash -s" <<'EOF'
+          set -euo pipefail
+          cd "$REMOTE_DIR"
+          if [ ! -f ./scripts/deploy.sh ]; then
+            echo "Missing ./scripts/deploy.sh on synced release"
+            exit 1
+          fi
+          chmod +x ./scripts/deploy.sh
+          ./scripts/deploy.sh
+          EOF
+
+      - name: Healthcheck
+        shell: bash
+        run: |
+          HEALTHCHECK_URL="${{ github.event.inputs.healthcheck_url }}"
+          if [ -z "$HEALTHCHECK_URL" ]; then
+            HEALTHCHECK_URL="https://${DEPLOY_HOST}/"
+          fi
+
+          curl --fail --show-error --silent --location \
+            --retry 10 \
+            --retry-all-errors \
+            --retry-delay 5 \
+            "$HEALTHCHECK_URL" > /dev/null

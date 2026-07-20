@@ -1,0 +1,35 @@
+app_name: cafco
+app_user: deploy
+app_group: www-data
+app_domain: "{{ lookup('env', 'DOMAIN') | default('cafco.cr', true) }}"
+app_server_name: "{{ app_domain }}"
+app_extra_server_names: []
+app_root: /var/www/cafco
+app_releases_path: /var/www/cafco/releases
+app_current_path: /var/www/cafco/current
+app_shared_path: /var/www/cafco/shared
+app_env_file: /var/www/cafco/shared/.env.production
+app_port: 3000
+app_bind_host: 127.0.0.1
+app_health_path: /api/health
+
+timezone: America/Costa_Rica
+locale: en_US.UTF-8
+swap_file_path: /swapfile
+swap_size_mb: 2048
+
+nodejs_major_version: 22
+pnpm_version: latest
+pm2_version: latest
+
+nginx_client_max_body_size: 10m
+nginx_rate_limit: "10r/s"
+nginx_rate_limit_burst: 20
+
+certbot_admin_email: "{{ lookup('env', 'LETSENCRYPT_EMAIL') | default('admin@' ~ app_domain, true) }}"
+certbot_enable: true
+certbot_staging: false
+
+backup_path: /var/backups/cafco
+backup_retention_days: 14
+backup_timer_on_calendar: "*-*-* 03:30:00"

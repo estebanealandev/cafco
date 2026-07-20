@@ -1,0 +1,6 @@
+---
+- name: Prepare Cafco application paths
+  hosts: web
+  become: yes
+  roles:
+    - app

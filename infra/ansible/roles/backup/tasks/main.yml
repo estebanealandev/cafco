@@ -1,0 +1,49 @@
+---
+- name: Ensure backup directory exists
+  ansible.builtin.file:
+    path: "{{ backup_path }}"
+    state: directory
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: "2770"
+
+- name: Install Cafco backup script
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/../../../scripts/backup.sh"
+    dest: /usr/local/bin/cafco-backup
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Install Cafco restore script
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/../../../scripts/restore.sh"
+    dest: /usr/local/bin/cafco-restore
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Install Cafco backup service
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/../../systemd/cafco-backup.service"
+    dest: /etc/systemd/system/cafco-backup.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Reload systemd
+
+- name: Install Cafco backup timer
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/../../systemd/cafco-backup.timer"
+    dest: /etc/systemd/system/cafco-backup.timer
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Reload systemd
+
+- name: Enable Cafco backup timer
+  ansible.builtin.systemd:
+    name: cafco-backup.timer
+    enabled: yes
+    state: started
+    daemon_reload: yes

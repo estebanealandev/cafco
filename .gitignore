@@ -32,9 +32,15 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
+
+# production infrastructure secrets
+infra/hetzner/.server-ip
+infra/hetzner/.secrets
+infra/ansible/inventory/hosts.yml
 
 # typescript
 *.tsbuildinfo

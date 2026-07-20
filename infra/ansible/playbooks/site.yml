@@ -1,0 +1,13 @@
+---
+- name: Fully provision Cafco production server
+  hosts: web
+  become: yes
+  roles:
+    - common
+    - harden
+    - nodejs
+    - nginx
+    - certbot
+    - pm2
+    - app
+    - backup
