@@ -1,0 +1,56 @@
+---
+- name: Install Certbot and Nginx plugin
+  ansible.builtin.apt:
+    name:
+      - certbot
+      - python3-certbot-nginx
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Check existing Certbot certificate lineage
+  ansible.builtin.command: "certbot certificates --cert-name {{ app_domain }}"
+  register: cafco_certbot_lineage
+  changed_when: false
+  failed_when: false
+  when: certbot_enable | bool
+
+- name: Request Let's Encrypt certificate
+  ansible.builtin.shell: |
+    set -euo pipefail
+    certbot certonly \
+      --webroot \
+      --webroot-path /var/www/letsencrypt \
+      --cert-name {{ app_domain | quote }} \
+      --non-interactive \
+      --agree-tos \
+      --email {{ certbot_admin_email | quote }} \
+      --deploy-hook "systemctl reload nginx" \
+      {% if certbot_staging | bool %}--staging{% endif %} \
+      -d {{ app_domain | quote }} \
+      {% for server_name in app_extra_server_names %}-d {{ server_name | quote }} {% endfor %}
+  args:
+    executable: /bin/bash
+  register: cafco_certbot_request
+  changed_when: "'Successfully received certificate' in cafco_certbot_request.stdout"
+  when: certbot_enable | bool and (cafco_certbot_lineage.rc | default(1)) != 0
+  notify: Reload nginx
+
+- name: Enable Certbot renewal timer
+  ansible.builtin.systemd:
+    name: certbot.timer
+    enabled: yes
+    state: started
+  when: certbot_enable | bool
+
+- name: Install renewal deploy hook
+  ansible.builtin.copy:
+    dest: /etc/letsencrypt/renewal-hooks/deploy/reload-nginx.sh
+    owner: root
+    group: root
+    mode: "0755"
+    content: |
+      #!/usr/bin/env bash
+      set -euo pipefail
+      systemctl reload nginx
+  when: certbot_enable | bool

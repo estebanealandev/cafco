@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @layer base {
   :root {
@@ -184,7 +184,7 @@ ul {
   position: relative;
 }
 .nav-links a::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -659,7 +659,7 @@ ul {
   font-family: var(--font-body), sans-serif;
 }
 .catalog-tab::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -780,7 +780,7 @@ ul {
   position: relative;
 }
 .product-includes li::before {
-  content: "·";
+  content: '·';
   position: absolute;
   left: 0;
   color: var(--color-accent);
@@ -858,7 +858,7 @@ ul {
   overflow: hidden;
 }
 .materials::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -949,7 +949,7 @@ ul {
   line-height: 1.7;
 }
 .brew-step:not(:last-child)::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 1.5rem;
   right: -1.25rem;
@@ -1004,7 +1004,7 @@ ul {
   margin-bottom: 4px;
 }
 .audience-positives li::before {
-  content: "\2192";
+  content: '\2192';
   position: absolute;
   left: 0;
   color: var(--color-accent);
@@ -1051,7 +1051,7 @@ ul {
   margin-bottom: var(--space-md);
 }
 .testimonial-quote::before {
-  content: "\201C";
+  content: '\201C';
   display: block;
   font-size: 4rem;
   line-height: 0.5;

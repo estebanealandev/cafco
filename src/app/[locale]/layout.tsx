@@ -1,33 +1,122 @@
-import { NextIntlClientProvider } from "next-intl";
-import { Instrument_Serif, Instrument_Sans } from "next/font/google";
-import { routing } from "@/i18n/routing";
-import { notFound } from "next/navigation";
-import "@/app/globals.css";
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
+import { NextIntlClientProvider } from 'next-intl'
+import { Instrument_Sans, Instrument_Serif } from 'next/font/google'
+import { notFound } from 'next/navigation'
+import { routing } from '@/i18n/routing'
+import { getSiteUrl } from '@/lib/site-url'
+import '@/app/globals.css'
 
 const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
-  display: "swap",
-});
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+  display: 'swap',
+})
 
 const instrumentSans = Instrument_Sans({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+type Locale = (typeof routing.locales)[number]
+
+const siteName = 'CAFCO'
+const defaultDescription
+  = 'Chorreadores de café artesanales en concreto y madera. Diseño costarricense para una experiencia de café elevada.'
+
+const localeTitles: Record<Locale, string> = {
+  es: 'CAFCO | Chorreadores de café artesanales',
+  en: 'CAFCO | Artisanal coffee brewers',
+  de: 'CAFCO | Handgefertigte Kaffeebereiter',
+  fr: 'CAFCO | Cafetieres artisanales',
 }
 
-async function getMessages(locale: string) {
+const localeDescriptions: Record<Locale, string> = {
+  es: defaultDescription,
+  en: 'Artisanal concrete and wood coffee brewers. Costa Rican design for an elevated coffee experience.',
+  de: 'Handgefertigte Kaffeebereiter aus Beton und Holz. Costa-ricanisches Design fuer ein gehobenes Kaffeeerlebnis.',
+  fr: 'Cafetieres artisanales en beton et bois. Design costaricien pour une experience cafe elevee.',
+}
+
+const openGraphLocales: Record<Locale, string> = {
+  es: 'es_CR',
+  en: 'en_US',
+  de: 'de_DE',
+  fr: 'fr_FR',
+}
+
+function isSupportedLocale(locale: string): locale is Locale {
+  return (routing.locales as readonly string[]).includes(locale)
+}
+
+function getLanguageAlternates() {
+  const languages: Record<string, string> = {
+    'x-default': `/${routing.defaultLocale}`,
+  }
+
+  for (const locale of routing.locales) {
+    languages[locale] = `/${locale}`
+  }
+
+  return languages
+}
+
+export function generateStaticParams() {
+  return routing.locales.map(locale => ({ locale }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale: requestedLocale } = await params
+  const locale = isSupportedLocale(requestedLocale)
+    ? requestedLocale
+    : routing.defaultLocale
+  const title = localeTitles[locale]
+  const description = localeDescriptions[locale]
+
+  return {
+    metadataBase: new URL(getSiteUrl()),
+    title,
+    description,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: getLanguageAlternates(),
+    },
+    openGraph: {
+      title,
+      description,
+      siteName,
+      url: `/${locale}`,
+      type: 'website',
+      locale: openGraphLocales[locale],
+      alternateLocale: routing.locales
+        .filter(alternateLocale => alternateLocale !== locale)
+        .map(alternateLocale => openGraphLocales[alternateLocale]),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+  }
+}
+
+async function getMessages(locale: string): Promise<Record<string, unknown>> {
   try {
-    return (await import(`../../../messages/${locale}.json`)).default;
-  } catch (error) {
-    console.error(`Error loading messages for locale ${locale}:`, error);
-    notFound();
+    const messagesModule = await import(`../../../messages/${locale}.json`) as {
+      default: Record<string, unknown>
+    }
+    return messagesModule.default
+  }
+  catch (error) {
+    console.error(`Error loading messages for locale ${locale}:`, error)
+    notFound()
   }
 }
 
@@ -35,16 +124,16 @@ export default async function LocaleLayout({
   children,
   params,
 }: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  children: ReactNode
+  params: Promise<{ locale: string }>
 }>) {
-  const { locale } = await params;
+  const { locale } = await params
 
-  if (!routing.locales.includes(locale as any)) {
-    notFound();
+  if (!isSupportedLocale(locale)) {
+    notFound()
   }
 
-  const messages = await getMessages(locale);
+  const messages = await getMessages(locale)
 
   return (
     <html
@@ -52,10 +141,10 @@ export default async function LocaleLayout({
       className={`scroll-smooth ${instrumentSerif.variable} ${instrumentSans.variable}`}
     >
       <head>
-        <meta
-          name="description"
-          content="Chorreadores de café artesanales en concreto y madera. Diseño costarricense para una experiencia de café elevada."
-        />
+        <link rel="preconnect" href="https://pub-920fda90d8d340c599bf7793a05eb9fb.r2.dev" />
+        <link rel="dns-prefetch" href="https://pub-920fda90d8d340c599bf7793a05eb9fb.r2.dev" />
+        <link rel="preconnect" href="https://static.wixstatic.com" />
+        <link rel="dns-prefetch" href="https://static.wixstatic.com" />
       </head>
       <body>
         <NextIntlClientProvider
@@ -67,5 +156,5 @@ export default async function LocaleLayout({
         </NextIntlClientProvider>
       </body>
     </html>
-  );
+  )
 }

@@ -1,0 +1,44 @@
+---
+- name: Ensure deploy group memberships
+  ansible.builtin.user:
+    name: "{{ app_user }}"
+    groups:
+      - "{{ app_group }}"
+    append: yes
+
+- name: Ensure Cafco directory layout exists
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: directory
+    owner: "{{ item.owner | default(app_user) }}"
+    group: "{{ item.group | default(app_group) }}"
+    mode: "{{ item.mode | default('2775') }}"
+  loop:
+    - { path: "{{ app_root }}" }
+    - { path: "{{ app_releases_path }}" }
+    - { path: "{{ app_shared_path }}" }
+    - { path: "{{ app_shared_path }}/tmp" }
+    - { path: /var/log/cafco }
+    - { path: "{{ backup_path }}" }
+
+- name: Create production environment file template
+  ansible.builtin.copy:
+    dest: "{{ app_env_file }}"
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: "0640"
+    force: no
+    content: |
+      NODE_ENV=production
+      PORT={{ app_port }}
+      HOSTNAME={{ app_bind_host }}
+      HOST={{ app_bind_host }}
+      NEXT_TELEMETRY_DISABLED=1
+
+- name: Ensure current symlink parent ownership
+  ansible.builtin.file:
+    path: "{{ app_root }}"
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: "2775"
+    state: directory
