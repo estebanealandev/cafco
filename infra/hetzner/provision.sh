@@ -4,7 +4,8 @@ set -Eeuo pipefail
 APP_NAME="${APP_NAME:-cafco}"
 SERVER_NAME="${SERVER_NAME:-cafco-prod}"
 LOCATION="${LOCATION:-ash}"
-SERVER_TYPE="${SERVER_TYPE:-cx22}"
+# Ashburn (ash) supports legacy CPX shared types (cpx11/cpx21/...), not cx23/cpx22.
+SERVER_TYPE="${SERVER_TYPE:-cpx21}"
 IMAGE="${IMAGE:-ubuntu-24.04}"
 SSH_KEY_PATH="${SSH_KEY_PATH:-$HOME/.ssh/cafco_hetzner}"
 SSH_KEY_NAME="${SSH_KEY_NAME:-cafco-hetzner-$(hostname -s 2>/dev/null || echo local)}"
@@ -99,11 +100,11 @@ create_server() {
       --label "app=${APP_NAME}" \
       --label "domain=${DOMAIN}" \
       --start-after-create >/dev/null; then
-      if [[ "${SERVER_TYPE}" != "cpx21" ]]; then
-        echo "Retrying with fallback server type cpx21..."
+      if [[ "${SERVER_TYPE}" != "cpx11" ]]; then
+        echo "Retrying with fallback server type cpx11..."
         hcloud server create \
           --name "${SERVER_NAME}" \
-          --type "cpx21" \
+          --type "cpx11" \
           --image "${IMAGE}" \
           --location "${LOCATION}" \
           --ssh-key "${SSH_KEY_NAME}" \

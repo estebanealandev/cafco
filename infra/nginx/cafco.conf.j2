@@ -13,7 +13,7 @@ upstream cafco_nextjs {
 server {
     listen 80;
     listen [::]:80;
-    server_name {{ app_server_name | default(app_domain) }}{% for name in app_extra_server_names | default([]) %} {{ name }}{% endfor %};
+    server_name {{ app_server_name | default(app_domain) }} www.{{ app_domain }}{% for name in app_extra_server_names | default([]) %} {{ name }}{% endfor %};
     server_tokens off;
 
     location ^~ /.well-known/acme-challenge/ {

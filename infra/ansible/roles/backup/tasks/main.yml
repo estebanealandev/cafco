@@ -25,7 +25,7 @@
 
 - name: Install Cafco backup service
   ansible.builtin.copy:
-    src: "{{ playbook_dir }}/../../systemd/cafco-backup.service"
+    src: "{{ playbook_dir }}/../../../systemd/cafco-backup.service"
     dest: /etc/systemd/system/cafco-backup.service
     owner: root
     group: root
@@ -34,7 +34,7 @@
 
 - name: Install Cafco backup timer
   ansible.builtin.copy:
-    src: "{{ playbook_dir }}/../../systemd/cafco-backup.timer"
+    src: "{{ playbook_dir }}/../../../systemd/cafco-backup.timer"
     dest: /etc/systemd/system/cafco-backup.timer
     owner: root
     group: root
