@@ -1,0 +1,126 @@
+---
+- name: Install Nginx
+  ansible.builtin.apt:
+    name:
+      - nginx
+      - openssl
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Try to install optional Brotli modules
+  ansible.builtin.apt:
+    name:
+      - libnginx-mod-http-brotli-filter
+      - libnginx-mod-http-brotli-static
+    state: present
+  register: cafco_brotli_install
+  failed_when: false
+
+- name: Ensure webroot and snippet directories exist
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+  loop:
+    - /var/www/letsencrypt
+    - /etc/nginx/snippets
+    - "/etc/letsencrypt/live/{{ app_domain }}"
+
+- name: Check for Let's Encrypt certificate
+  ansible.builtin.stat:
+    path: "/etc/letsencrypt/live/{{ app_domain }}/fullchain.pem"
+  register: cafco_le_cert
+
+- name: Create temporary self-signed certificate for first Nginx boot
+  ansible.builtin.command: >
+    openssl req -x509 -nodes -newkey rsa:2048 -days 7
+    -subj /CN={{ app_domain }}
+    -keyout /etc/letsencrypt/live/{{ app_domain }}/privkey.pem
+    -out /etc/letsencrypt/live/{{ app_domain }}/fullchain.pem
+  when: not cafco_le_cert.stat.exists
+  changed_when: true
+
+- name: Restrict temporary private key
+  ansible.builtin.file:
+    path: "/etc/letsencrypt/live/{{ app_domain }}/privkey.pem"
+    owner: root
+    group: root
+    mode: "0600"
+
+- name: Check whether Brotli modules are enabled
+  ansible.builtin.stat:
+    path: /etc/nginx/modules-enabled/50-mod-http-brotli-filter.conf
+  register: cafco_brotli_module
+
+- name: Configure optional Brotli snippet
+  ansible.builtin.copy:
+    dest: /etc/nginx/snippets/cafco-brotli.conf
+    owner: root
+    group: root
+    mode: "0644"
+    content: |
+      {% if cafco_brotli_module.stat.exists %}
+      brotli on;
+      brotli_comp_level 5;
+      brotli_static on;
+      brotli_types text/plain text/css text/xml application/javascript application/json application/rss+xml image/svg+xml;
+      {% else %}
+      # Brotli module not installed; gzip remains enabled in the site config.
+      {% endif %}
+  notify: Reload nginx
+
+- name: Deploy Cafco Nginx site
+  ansible.builtin.template:
+    src: "{{ playbook_dir }}/../../nginx/cafco.conf.j2"
+    dest: /etc/nginx/sites-available/cafco.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Restart nginx
+
+- name: Enable Cafco Nginx site
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/cafco.conf
+    dest: /etc/nginx/sites-enabled/cafco.conf
+    state: link
+  notify: Restart nginx
+
+- name: Disable default Nginx site
+  ansible.builtin.file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: Restart nginx
+
+- name: Configure Nginx logrotate
+  ansible.builtin.copy:
+    dest: /etc/logrotate.d/nginx
+    owner: root
+    group: root
+    mode: "0644"
+    content: |
+      /var/log/nginx/*.log {
+          daily
+          missingok
+          rotate 14
+          compress
+          delaycompress
+          notifempty
+          create 0640 www-data adm
+          sharedscripts
+          postrotate
+              [ -s /run/nginx.pid ] && kill -USR1 `cat /run/nginx.pid`
+          endscript
+      }
+
+- name: Validate Nginx configuration
+  ansible.builtin.command: nginx -t
+  changed_when: false
+
+- name: Enable and start Nginx
+  ansible.builtin.systemd:
+    name: nginx
+    enabled: yes
+    state: started

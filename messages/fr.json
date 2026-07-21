@@ -9,7 +9,13 @@
       "materials": "Matériaux",
       "preparation": "Préparation",
       "about": "À propos",
-      "order": "Commander"
+      "order": "Commander",
+      "menu": "Menu",
+      "menuAria": "Ouvrir le menu de navigation",
+      "close": "Fermer le menu",
+      "orderWa": "Commander via WhatsApp",
+      "localeAria": "Choisir la langue",
+      "scrollDown": "Défiler vers le bas"
     },
     "hero": {
       "eyebrow": "Fait main au Costa Rica",
@@ -104,7 +110,17 @@
       "personal": "Personnel",
       "teca": "Teck",
       "dripperV60": "Filtre V60 en verre",
-      "clothBag": "Sac en tissu"
+      "clothBag": "Sac en tissu",
+      "hA01v60": "A01 + V60",
+      "hA01bag": "A01 + Filtre tissu",
+      "hA02v60": "A02 + V60",
+      "hA02bag": "A02 + Filtre tissu",
+      "weightA01": "6 kg",
+      "weightA02": "2 kg",
+      "priceA01v60": "₡50,000",
+      "priceA01bag": "₡45,000",
+      "priceA02v60": "₡35,000",
+      "priceA02bag": "₡30,000"
     },
     "materials": {
       "title": "Tout est dans les détails",
@@ -174,7 +190,17 @@
       "c2l2": "Matériaux",
       "c2l3": "Guide de préparation",
       "c3t": "Connecter",
-      "bott": "© 2026 CAFCO — San José, Costa Rica. Tous droits réservés."
+      "bott": "© 2026 CAFCO — San José, Costa Rica. Tous droits réservés.",
+      "paySinpe": "Sinpe Móvil",
+      "payTransfer": "Virement",
+      "payCash": "Espèces",
+      "instagram": "Instagram",
+      "whatsapp": "WhatsApp"
+    },
+    "theme": {
+      "light": "Thème clair",
+      "dark": "Thème sombre",
+      "toggle": "Changer de thème"
     }
   }
 }

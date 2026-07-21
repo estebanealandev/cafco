@@ -1,0 +1,75 @@
+#cloud-config
+timezone: America/Costa_Rica
+locale: en_US.UTF-8
+
+users:
+  - default
+  - name: deploy
+    gecos: Cafco deploy user
+    groups: [adm, sudo, www-data]
+    shell: /bin/bash
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    lock_passwd: true
+    ssh_authorized_keys:
+      - ssh-ed25519 CHANGE_ME_REPLACED_BY_HETZNER_SSH_KEY deploy@cafco
+
+ssh_pwauth: false
+disable_root: true
+package_update: true
+package_upgrade: true
+
+packages:
+  - ca-certificates
+  - curl
+  - fail2ban
+  - git
+  - htop
+  - jq
+  - locales
+  - logrotate
+  - rsync
+  - software-properties-common
+  - unattended-upgrades
+  - ufw
+  - wget
+
+write_files:
+  - path: /etc/ssh/sshd_config.d/90-cafco-hardening.conf
+    owner: root:root
+    permissions: "0644"
+    content: |
+      PasswordAuthentication no
+      KbdInteractiveAuthentication no
+      ChallengeResponseAuthentication no
+      PermitRootLogin no
+      PubkeyAuthentication yes
+      X11Forwarding no
+      AllowUsers deploy
+  - path: /etc/fail2ban/jail.d/sshd.local
+    owner: root:root
+    permissions: "0644"
+    content: |
+      [sshd]
+      enabled = true
+      port = ssh
+      maxretry = 5
+      findtime = 10m
+      bantime = 1h
+
+runcmd:
+  - locale-gen en_US.UTF-8
+  - update-locale LANG=en_US.UTF-8
+  - ufw default deny incoming
+  - ufw default allow outgoing
+  - ufw allow 22/tcp
+  - ufw allow 80/tcp
+  - ufw allow 443/tcp
+  - ufw --force enable
+  - dpkg-reconfigure -f noninteractive unattended-upgrades
+  - systemctl enable --now fail2ban
+  - systemctl restart ssh || systemctl restart sshd
+  - mkdir -p /var/www/cafco/releases /var/log/cafco /var/backups/cafco
+  - chown -R deploy:www-data /var/www/cafco /var/log/cafco /var/backups/cafco
+  - chmod 2775 /var/www/cafco /var/log/cafco /var/backups/cafco
+
+final_message: "Cafco base cloud-init bootstrap complete after $UPTIME seconds."
