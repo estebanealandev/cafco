@@ -1,0 +1,7 @@
+---
+- name: Install Cafco Node.js and process runtime
+  hosts: web
+  become: yes
+  roles:
+    - nodejs
+    - pm2

@@ -1,0 +1,90 @@
+---
+- name: Install hardening packages
+  ansible.builtin.apt:
+    name:
+      - fail2ban
+      - ufw
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Configure SSH daemon hardening
+  ansible.builtin.copy:
+    dest: /etc/ssh/sshd_config.d/90-cafco-hardening.conf
+    owner: root
+    group: root
+    mode: "0644"
+    content: |
+      PasswordAuthentication no
+      KbdInteractiveAuthentication no
+      ChallengeResponseAuthentication no
+      PermitRootLogin no
+      PubkeyAuthentication yes
+      X11Forwarding no
+      AllowTcpForwarding no
+      ClientAliveInterval 300
+      ClientAliveCountMax 2
+      MaxAuthTries 3
+      LoginGraceTime 30
+      AllowUsers {{ app_user }}
+  notify: Restart ssh
+
+- name: Configure UFW defaults
+  ansible.builtin.command: "ufw default {{ item.policy }} {{ item.direction }}"
+  loop:
+    - { direction: incoming, policy: deny }
+    - { direction: outgoing, policy: allow }
+  changed_when: "'Default' in cafco_ufw_defaults.stdout"
+  register: cafco_ufw_defaults
+
+- name: Allow public service ports through UFW
+  ansible.builtin.command: "ufw allow {{ item }}/tcp"
+  loop:
+    - "22"
+    - "80"
+    - "443"
+  register: cafco_ufw_rules
+  changed_when: "'Skipping' not in cafco_ufw_rules.stdout"
+
+- name: Enable UFW
+  ansible.builtin.command: ufw --force enable
+  register: cafco_ufw_enable
+  changed_when: "'Firewall is active and enabled' not in cafco_ufw_enable.stdout"
+
+- name: Configure Fail2ban defaults and jails
+  ansible.builtin.copy:
+    dest: /etc/fail2ban/jail.d/cafco.local
+    owner: root
+    group: root
+    mode: "0644"
+    content: |
+      [DEFAULT]
+      bantime = 1h
+      findtime = 10m
+      maxretry = 5
+      backend = systemd
+
+      [sshd]
+      enabled = true
+      port = ssh
+      maxretry = 5
+
+      [nginx-http-auth]
+      enabled = true
+
+      [nginx-botsearch]
+      enabled = true
+      logpath = /var/log/nginx/access.log
+      maxretry = 10
+
+      [nginx-bad-request]
+      enabled = true
+      logpath = /var/log/nginx/access.log
+      maxretry = 10
+  notify: Restart fail2ban
+
+- name: Enable Fail2ban
+  ansible.builtin.systemd:
+    name: fail2ban
+    enabled: yes
+    state: started

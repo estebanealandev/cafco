@@ -1,0 +1,6 @@
+---
+- name: Configure Cafco backups
+  hosts: web
+  become: yes
+  roles:
+    - backup
