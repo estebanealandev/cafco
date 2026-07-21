@@ -1,22 +1,31 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { NextIntlClientProvider } from 'next-intl'
-import { Instrument_Sans, Instrument_Serif } from 'next/font/google'
+import { Newsreader, Source_Sans_3 } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { getSiteUrl } from '@/lib/site-url'
 import '@/app/globals.css'
 
-const instrumentSerif = Instrument_Serif({
-  subsets: ['latin'],
-  weight: ['400'],
+/**
+ * Display / headings — Newsreader (OFL)
+ * Closest open alternative to WatchHouse's Tiempos Headline:
+ * contemporary transitional serif, optical sizing, editorial presence.
+ */
+const displayFont = Newsreader({
+  subsets: ['latin', 'latin-ext'],
   style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
 })
 
-const instrumentSans = Instrument_Sans({
-  subsets: ['latin'],
+/**
+ * Body / UI — Source Sans 3 (OFL)
+ * Closest open alternative to WatchHouse's Balto:
+ * clean neo-grotesque with true light weights and excellent multilingual coverage.
+ */
+const bodyFont = Source_Sans_3({
+  subsets: ['latin', 'latin-ext'],
   variable: '--font-body',
   display: 'swap',
 })
@@ -138,7 +147,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`scroll-smooth ${instrumentSerif.variable} ${instrumentSans.variable}`}
+      className={`scroll-smooth ${displayFont.variable} ${bodyFont.variable}`}
     >
       <head>
         <link rel="preconnect" href="https://pub-920fda90d8d340c599bf7793a05eb9fb.r2.dev" />
