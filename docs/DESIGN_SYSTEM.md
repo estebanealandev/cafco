@@ -56,6 +56,7 @@ Navbar sticky con glass espresso, menú hamburguesa solo ≤1024px, footer con s
 
 ## Theme
 
-- Default light; persistido en `localStorage` (`cafco-theme`)
+- Default siempre **light** (no sigue `prefers-color-scheme`); solo dark si el usuario lo elige
+- Persistido en `localStorage` (`cafco-theme`)
 - Script anti-FOUC en layout + toggle en navbar
 - Footer usa logo dark en light theme y logo light en dark theme
