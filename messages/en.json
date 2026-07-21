@@ -9,7 +9,13 @@
       "materials": "Materials",
       "preparation": "Brewing",
       "about": "About Us",
-      "order": "Order"
+      "order": "Order",
+      "menu": "Menu",
+      "menuAria": "Open navigation menu",
+      "close": "Close menu",
+      "orderWa": "Order via WhatsApp",
+      "localeAria": "Select language",
+      "scrollDown": "Scroll down"
     },
     "hero": {
       "eyebrow": "Handmade in Costa Rica",
@@ -104,7 +110,17 @@
       "personal": "Personal",
       "teca": "Teak",
       "dripperV60": "Glass V60 Dripper",
-      "clothBag": "Cloth bag"
+      "clothBag": "Cloth bag",
+      "hA01v60": "A01 + V60",
+      "hA01bag": "A01 + Cloth",
+      "hA02v60": "A02 + V60",
+      "hA02bag": "A02 + Cloth",
+      "weightA01": "6 kg",
+      "weightA02": "2 kg",
+      "priceA01v60": "₡50,000",
+      "priceA01bag": "₡45,000",
+      "priceA02v60": "₡35,000",
+      "priceA02bag": "₡30,000"
     },
     "materials": {
       "title": "It's all in the details",
@@ -174,7 +190,17 @@
       "c2l2": "Materials",
       "c2l3": "Brewing Guide",
       "c3t": "Connect",
-      "bott": "© 2026 CAFCO — San José, Costa Rica. All rights reserved."
+      "bott": "© 2026 CAFCO — San José, Costa Rica. All rights reserved.",
+      "paySinpe": "Sinpe Móvil",
+      "payTransfer": "Bank transfer",
+      "payCash": "Cash",
+      "instagram": "Instagram",
+      "whatsapp": "WhatsApp"
+    },
+    "theme": {
+      "light": "Light theme",
+      "dark": "Dark theme",
+      "toggle": "Toggle theme"
     }
   }
 }

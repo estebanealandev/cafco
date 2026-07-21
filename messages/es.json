@@ -9,7 +9,13 @@
       "materials": "Materiales",
       "preparation": "Preparación",
       "about": "Nosotros",
-      "order": "Ordenar"
+      "order": "Ordenar",
+      "menu": "Menú",
+      "menuAria": "Abrir menú de navegación",
+      "close": "Cerrar menú",
+      "orderWa": "Ordenar por WhatsApp",
+      "localeAria": "Seleccionar idioma",
+      "scrollDown": "Desplazarse hacia abajo"
     },
     "hero": {
       "eyebrow": "Hecho a mano en Costa Rica",
@@ -104,7 +110,17 @@
       "personal": "Personal",
       "teca": "Teca",
       "dripperV60": "Dripper V60 vidrio",
-      "clothBag": "Bolsa de tela"
+      "clothBag": "Bolsa de tela",
+      "hA01v60": "A01 + V60",
+      "hA01bag": "A01 + Bolsa",
+      "hA02v60": "A02 + V60",
+      "hA02bag": "A02 + Bolsa",
+      "weightA01": "6 kg",
+      "weightA02": "2 kg",
+      "priceA01v60": "₡50,000",
+      "priceA01bag": "₡45,000",
+      "priceA02v60": "₡35,000",
+      "priceA02bag": "₡30,000"
     },
     "materials": {
       "title": "Todo está en el detalle",
@@ -174,7 +190,17 @@
       "c2l2": "Materiales",
       "c2l3": "Guía de preparación",
       "c3t": "Conectar",
-      "bott": "© 2026 CAFCO — San José, Costa Rica. Todos los derechos reservados."
+      "bott": "© 2026 CAFCO — San José, Costa Rica. Todos los derechos reservados.",
+      "paySinpe": "Sinpe Móvil",
+      "payTransfer": "Transferencia",
+      "payCash": "Efectivo",
+      "instagram": "Instagram",
+      "whatsapp": "WhatsApp"
+    },
+    "theme": {
+      "light": "Tema claro",
+      "dark": "Tema oscuro",
+      "toggle": "Cambiar tema"
     }
   }
 }

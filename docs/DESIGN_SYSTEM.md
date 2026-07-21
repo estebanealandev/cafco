@@ -45,7 +45,17 @@ Navbar sticky con glass espresso, menú hamburguesa solo ≤1024px, footer con s
 
 ## Archivos
 
-- `src/app/globals.css` — design system completo
-- `src/app/[locale]/page.tsx` — markup (clases de botón/form/nav)
+- `src/app/globals.css` — design system completo + tokens `[data-theme='dark']`
+- `src/app/[locale]/page.tsx` — composición de secciones
+- `src/components/home/*` — secciones extraídas
+- `src/components/ui/*` — LocaleSwitcher (Radix Select), MobileNav (Radix Dialog), ThemeToggle
+- `src/hooks/use-scroll-spy.ts` — nav `.is-active`
+- `public/brand/cafco-logo-dark.png` — logo oscuro real (sin filter CSS)
 - `docs/TYPOGRAPHY.md` — tipografía
 - `docs/DESIGN_SYSTEM.md` — este documento
+
+## Theme
+
+- Default light; persistido en `localStorage` (`cafco-theme`)
+- Script anti-FOUC en layout + toggle en navbar
+- Footer usa logo dark en light theme y logo light en dark theme
