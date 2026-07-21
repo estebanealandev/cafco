@@ -325,14 +325,14 @@ export default function Home() {
         >
           {t('nav.about')}
         </a>
-        <div style={{ marginTop: '2rem' }}>
+        <div className="mobile-menu-locale">
           <LocaleSwitcher />
         </div>
         <a
           href={WA_BASE}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ color: 'var(--color-wa)' }}
+          className="mobile-menu-wa"
         >
           {t('nav.order')}
           {' '}
@@ -361,7 +361,7 @@ export default function Home() {
           <div className="hero-ctas">
             <a
               href="#modelos"
-              className="btn btn-primary"
+              className="btn btn-cta"
               onClick={e => smoothScroll(e, '#modelos')}
             >
               {t('hero.ctaPrimary')}
@@ -370,7 +370,7 @@ export default function Home() {
               href={`${WA_BASE}?text=Hola%2C%20quiero%20ordenar%20un%20chorreador%20CAFCO`}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-wa"
+              className="btn btn-wa btn-lg"
             >
               <WaIcon />
               {' '}
@@ -749,12 +749,21 @@ export default function Home() {
               e.preventDefault()
             }}
           >
+            <label className="sr-only" htmlFor="newsletter-email">
+              {t('newsletter.placeholder')}
+            </label>
             <input
+              id="newsletter-email"
+              className="input"
               type="email"
+              name="email"
+              autoComplete="email"
               placeholder={t('newsletter.placeholder')}
               required
             />
-            <button type="submit">{t('newsletter.btn')}</button>
+            <button type="submit" className="btn btn-primary">
+              {t('newsletter.btn')}
+            </button>
           </form>
         </div>
       </section>

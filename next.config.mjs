@@ -20,6 +20,7 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   images: {
+    qualities: [75, 85, 90],
     remotePatterns: [
       { protocol: 'https', hostname: 'pub-920fda90d8d340c599bf7793a05eb9fb.r2.dev' },
       { protocol: 'https', hostname: 'static.wixstatic.com' },
