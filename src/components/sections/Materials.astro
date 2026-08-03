@@ -1,0 +1,47 @@
+---
+import type { Locale } from '@/i18n/config'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+---
+
+<section class="materials" id="materiales">
+  <div class="container">
+    <div class="catalog-header reveal">
+      <h2>{t.materials.title}</h2>
+      <p>{t.materials.desc}</p>
+    </div>
+    <div class="materials-grid">
+      <div class="material-card reveal reveal-d1">
+        <svg class="material-icon" viewBox="0 0 48 48" fill="none" stroke="rgba(245,241,236,0.4)" stroke-width="1.5">
+          <rect x="8" y="12" width="32" height="28" rx="1"></rect>
+          <path d="M14 20h20M14 28h14M14 36h8" stroke="rgba(245,241,236,0.25)"></path>
+        </svg>
+        <h3>{t.materials.m1}</h3>
+        <p>{t.materials.m1d}</p>
+      </div>
+      <div class="material-card reveal reveal-d2">
+        <svg class="material-icon" viewBox="0 0 48 48" fill="none" stroke="rgba(245,241,236,0.4)" stroke-width="1.5">
+          <path
+            d="M24 4v40M16 8c4 4 12 4 16 0M12 16c6 4 18 4 24 0M10 24c7 4 21 4 28 0M12 32c6 4 18 4 24 0M16 40c4 4 12 4 16 0"
+          ></path>
+        </svg>
+        <h3>{t.materials.m2}</h3>
+        <p>{t.materials.m2d}</p>
+      </div>
+      <div class="material-card reveal reveal-d3">
+        <svg class="material-icon" viewBox="0 0 48 48" fill="none" stroke="rgba(245,241,236,0.4)" stroke-width="1.5">
+          <path d="M12 8l24 0M8 8c0 20 8 32 16 36C32 40 40 28 40 8"></path>
+          <path d="M16 16c0 12 4 20 8 24 4-4 8-12 8-24" stroke="rgba(245,241,236,0.2)"></path>
+        </svg>
+        <h3>{t.materials.m3}</h3>
+        <p>{t.materials.m3d}</p>
+      </div>
+    </div>
+  </div>
+</section>

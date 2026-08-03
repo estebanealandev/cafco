@@ -1,0 +1,75 @@
+---
+import type { Locale } from '@/i18n/config'
+import { SITE_NAME } from '@/data/site'
+import { PRODUCTS } from '@/data/products'
+import { getMessages } from '@/i18n/messages'
+import CompareTable from './CompareTable.astro'
+import ProductCard from './ProductCard.astro'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+
+const tabs = [
+  { key: 'all', label: t.catalog.tabAll },
+  { key: 'a01', label: t.catalog.tabA01 },
+  { key: 'a02', label: t.catalog.tabA02 },
+] as const
+
+function stripHtml(value: string): string {
+  return value.replace(/<[^>]+>/g, '')
+}
+
+// No fabricated aggregateRating/review or availability — those aren't real data.
+const productSchemas = PRODUCTS.map((product) => {
+  const copy = t.products[product.key]
+  return {
+    '@type': 'Product',
+    name: stripHtml(copy.name),
+    description: copy.desc,
+    image: new URL(product.image.src, Astro.site).toString(),
+    sku: product.key,
+    brand: { '@type': 'Brand', name: SITE_NAME },
+    offers: {
+      '@type': 'Offer',
+      price: product.priceCrc,
+      priceCurrency: 'CRC',
+      url: new URL(`/${locale}/`, Astro.site).toString(),
+    },
+  }
+})
+
+const productListSchema = {
+  '@context': 'https://schema.org',
+  '@graph': productSchemas,
+}
+---
+
+<section class="catalog container" id="modelos">
+  <div class="catalog-header reveal">
+    <h2>{t.catalog.title}</h2>
+    <p>{t.catalog.desc}</p>
+  </div>
+  <div class="catalog-tabs reveal">
+    {
+      tabs.map((tab, i) => (
+        <button type="button" class={`catalog-tab${i === 0 ? ' active' : ''}`} data-tab={tab.key}>
+          {tab.label}
+        </button>
+      ))
+    }
+  </div>
+
+  {PRODUCTS.map((product, i) => <ProductCard product={product} copy={t.products[product.key]} eager={i === 0} />)}
+
+  <CompareTable locale={locale} />
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(productListSchema)} is:inline />
+
+<script>
+  import '@/scripts/catalog-filter'
+</script>

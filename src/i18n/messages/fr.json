@@ -1,0 +1,184 @@
+{
+  "seo": {
+    "title": "CAFCO — Cafetières artisanales en béton et bois de teck",
+    "description": "Cafetières artisanales en béton et bois de teck, fabriquées à la main au Costa Rica. Design minimaliste pour un rituel café élevé."
+  },
+  "alt": {
+    "hero": "Cafetière CAFCO",
+    "audience": "Cafetières CAFCO A01 et A02 ensemble",
+    "story": "Détail de la texture du béton CAFCO"
+  },
+  "announcement": "Production limitée · Commandes directes via",
+  "announcementWa": "WhatsApp",
+  "announcementAnd": "et",
+  "announcementIg": "Instagram",
+  "nav": {
+    "models": "Modèles",
+    "materials": "Matériaux",
+    "preparation": "Préparation",
+    "about": "À propos",
+    "order": "Commander",
+    "selectLanguage": "Choisir la langue"
+  },
+  "hero": {
+    "eyebrow": "Fait main au Costa Rica",
+    "title": "Conçu pour<br /><em>des rituels lents</em>",
+    "subtitle": "Cafetières artisanales en béton. Une sculpture fonctionnelle pour ceux qui voient la beauté dans la pause.",
+    "ctaPrimary": "Voir les modèles",
+    "ctaWa": "Commander maintenant"
+  },
+  "features": {
+    "f1Title": "Béton Artisanal",
+    "f1Desc": "Chaque pièce est unique",
+    "f2Title": "Bois de Teck",
+    "f2Desc": "Reforestation locale",
+    "f3Title": "Filtre V60 ou Tissu",
+    "f3Desc": "Deux méthodes",
+    "f4Title": "Production Limitée",
+    "f4Desc": "Commandes directes"
+  },
+  "manifesto": "Chaque cafetière CAFCO est une structure minimale, conçue pour soutenir un <em>rituel quotidien</em>. Le béton, le bois et le verre s'unissent dans un objet qui n'est pas seulement utile — c'est une <em>présence</em>.",
+  "catalog": {
+    "title": "La Collection",
+    "desc": "Deux modèles, deux échelles. Le même engagement envers l'honnêteté des matériaux et des détails.",
+    "tabAll": "Tous",
+    "tabA01": "A01 — Partager",
+    "tabA02": "A02 — Personnel"
+  },
+  "products": {
+    "a01v60": {
+      "eyebrow": "Modèle A01 · Avec Filtre V60",
+      "name": "Cafetière <em>A01</em>",
+      "badge": "Emblème",
+      "tagline": "Le premier de sa série.",
+      "desc": "Conçu comme une sculpture fonctionnelle, idéal pour partager le rituel du café. Une pièce qui invite à la pause et à la présence. Robuste et brutaliste, le A01 est le début de la collection CAFCO.",
+      "includesTitle": "Ce qui est inclus ?",
+      "include1": "Bloc de béton (6 kg)",
+      "include2": "Bras en bois (Teck)",
+      "include3": "Filtre V60 (Verre)",
+      "priceNote": "TVA incluse",
+      "cta": "Commander via WhatsApp"
+    },
+    "a01bag": {
+      "eyebrow": "Modèle A01 · Avec Sac en Tissu",
+      "name": "Cafetière <em>A01</em>",
+      "badge": "Le plus vendu",
+      "tagline": "Le premier de sa série et le favori local.",
+      "desc": "La même base monolithique en béton texturé et bois de teck. Cette version inclut un sac en tissu artisanal — pour ceux qui préfèrent la méthode traditionnelle costaricaine.",
+      "includesTitle": "Ce qui est inclus ?",
+      "include1": "Bloc de béton (6 kg)",
+      "include2": "Bras en bois (Teck)",
+      "include3": "Sac en tissu",
+      "priceNote": "TVA incluse",
+      "cta": "Commander via WhatsApp"
+    },
+    "a02v60": {
+      "eyebrow": "Modèle A02 · Avec Filtre V60",
+      "name": "Cafetière <em>A02</em>",
+      "badge": "Compact",
+      "tagline": "Pour ceux qui n'aiment pas partager leur café.",
+      "desc": "Le A02 est une version plus portable, conçue pour vous accompagner n'importe où. Une sculpture fonctionnelle pour une seule tasse.",
+      "includesTitle": "Ce qui est inclus ?",
+      "include1": "Bloc de béton (2 kg)",
+      "include2": "Bras en bois (Teck)",
+      "include3": "Filtre V60 (Verre)",
+      "priceNote": "TVA incluse",
+      "cta": "Commander via WhatsApp"
+    },
+    "a02bag": {
+      "eyebrow": "Modèle A02 · Avec Sac en Tissu",
+      "name": "Cafetière <em>A02</em>",
+      "badge": "Favori",
+      "tagline": "L'option individuelle la plus demandée.",
+      "desc": "Compact et fonctionnel avec la même présence architecturale que le A01. Maintient la structure en béton et le bois chaleureux dans une échelle plus légère avec le sac en tissu de la méthode costaricaine.",
+      "includesTitle": "Ce qui est inclus ?",
+      "include1": "Bloc de béton (2 kg)",
+      "include2": "Bras en bois (Teck)",
+      "include3": "Sac en tissu",
+      "priceNote": "TVA incluse",
+      "cta": "Commander via WhatsApp"
+    }
+  },
+  "compare": {
+    "scale": "Échelle",
+    "weight": "Poids",
+    "wood": "Bois",
+    "filter": "Filtre",
+    "price": "Prix",
+    "sharing": "Pour partager",
+    "personal": "Personnel",
+    "teca": "Teck",
+    "dripperV60": "Filtre V60 en verre",
+    "clothBag": "Sac en tissu"
+  },
+  "materials": {
+    "title": "Tout est dans les détails",
+    "desc": "Chez CAFCO, nous valorisons ces petits aspects qui définissent l'essence d'un objet : sa texture, son poids, sa vraie forme.",
+    "m1": "Béton architectural",
+    "m1d": "Mélange haute performance avec une finition texturée. Chaque base a une teinte unique — sans cacher les imperfections. L'honnêteté du matériau est le pilier.",
+    "m2": "Bois de teck",
+    "m2d": "Bois costaricien issu du reboisement, protégé par un scellant professionnel résistant à l'humidité. Son grain chaleureux contraste élégamment avec le froid du béton pour une finition conçue pour durer.",
+    "m3": "Verre borosilicate",
+    "m3d": "Filtre style V60 résistant à la chaleur pour une extraction uniforme. Alternative disponible : sac en tissu artisanal pour la méthode costaricaine."
+  },
+  "brew": {
+    "title": "Votre rituel, élevé",
+    "desc": "Quatre étapes pour une tasse parfaite avec votre cafetière CAFCO.",
+    "s1": "Chauffer l'eau",
+    "s1d": "Chauffez l'eau à environ 93°C et préchauffez le cône tout en rinçant le filtre pour éliminer les goûts résiduels.",
+    "s2": "Ajouter le café",
+    "s2d": "Ajoutez 15g de café à mouture moyenne dans le filtre et nivelez le lit avec de légers tapotements.",
+    "s3": "Verser",
+    "s3d": "Commencez à verser l'eau en cercles lents, réguliers et contrôlés, en complétant l'extraction en 3 minutes.",
+    "s4": "Déguster",
+    "s4d": "Retirez délicatement le filtre, servez dans votre tasse préférée et profitez de la saveur honnête de votre café."
+  },
+  "audience": {
+    "title": "Pour qui est <em>cet objet ?</em>",
+    "neg1": "Ce n'est pas pour tout le monde.",
+    "neg2": "Ce n'est pas rapide.",
+    "neg3": "Ce n'est pas léger.",
+    "neg4": "Ce n'est pas jetable.",
+    "pos1": "C'est pour ceux qui apprécient le café comme un acte conscient.",
+    "pos2": "Pour ceux qui valorisent les détails, le design, la matérialité et le silence.",
+    "pos3": "Pour ceux qui voient la beauté dans la pause et le caractère dans la simplicité.",
+    "pos4": "Pour ceux qui ne veulent pas juste faire du café, mais concevoir un moment.",
+    "pos5": "CAFCO est pour ceux qui choisissent ce qu'ils achètent comme ce qu'ils pensent : avec soin.",
+    "cta": "Si cela résonne en vous, CAFCO est fait pour vous.",
+    "ctaBtn": "Écrivez-nous"
+  },
+  "testimonials": {
+    "q1": "C'est plus qu'une cafetière — c'est une pièce de design qui transforme mon matin en un rituel. La qualité du béton et du bois se ressent à chaque instant.",
+    "a1": "Carlos V. — San José, Costa Rica"
+  },
+  "story": {
+    "eyebrow": "Notre histoire",
+    "title": "La beauté réside dans le simple, le vrai et <em>le fait main</em>",
+    "p1": "En architecture, très peu savent apprécier l'honnêteté d'un matériau. C'est pourquoi, chez CAFCO, nous donnons de l'importance à ce qui définit l'essence d'un objet.",
+    "p2": "Chaque pièce naît du respect de ce qu'elle est — parce que le design peut aussi être sincère.",
+    "v1n": "28",
+    "v1l": "Jours de durcissement",
+    "v2n": "100%",
+    "v2l": "Fait à la main",
+    "v3n": "CR",
+    "v3l": "Design Costaricain"
+  },
+  "newsletter": {
+    "title": "Abonnez-vous à notre univers",
+    "desc": "Accès anticipé aux nouveaux designs, éditions limitées et rituels café.",
+    "placeholder": "votre@email.com",
+    "btn": "S'abonner"
+  },
+  "footer": {
+    "brandDesc": "Cafetières artisanales en béton et bois de teck. Conçues et fabriquées à la main au Costa Rica.",
+    "c1t": "Boutique",
+    "c1l1": "Cafetière A01",
+    "c1l2": "Cafetière A02",
+    "c2t": "Entreprise",
+    "c2l1": "À propos",
+    "c2l2": "Matériaux",
+    "c2l3": "Guide de préparation",
+    "c3t": "Connecter",
+    "bott": "© 2026 CAFCO — San José, Costa Rica. Tous droits réservés."
+  }
+}

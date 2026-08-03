@@ -1,0 +1,67 @@
+---
+import type { Locale } from '@/i18n/config'
+import type { Product, ProductKey } from '@/data/products'
+import { formatCrc, PRODUCTS } from '@/data/products'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+
+const productsByKey = Object.fromEntries(PRODUCTS.map((p) => [p.key, p])) as Record<ProductKey, Product>
+const { a01v60, a01bag, a02v60, a02bag } = productsByKey
+---
+
+<div class="compare reveal">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>A01 + V60</th>
+        <th>A01 + Bolsa</th>
+        <th>A02 + V60</th>
+        <th>A02 + Bolsa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{t.compare.scale}</td>
+        <td>{t.compare.sharing}</td>
+        <td>{t.compare.sharing}</td>
+        <td>{t.compare.personal}</td>
+        <td>{t.compare.personal}</td>
+      </tr>
+      <tr>
+        <td>{t.compare.weight}</td>
+        <td>{a01v60.weightKg} kg</td>
+        <td>{a01bag.weightKg} kg</td>
+        <td>{a02v60.weightKg} kg</td>
+        <td>{a02bag.weightKg} kg</td>
+      </tr>
+      <tr>
+        <td>{t.compare.wood}</td>
+        <td>{t.compare.teca}</td>
+        <td>{t.compare.teca}</td>
+        <td>{t.compare.teca}</td>
+        <td>{t.compare.teca}</td>
+      </tr>
+      <tr>
+        <td>{t.compare.filter}</td>
+        <td>{t.compare.dripperV60}</td>
+        <td>{t.compare.clothBag}</td>
+        <td>{t.compare.dripperV60}</td>
+        <td>{t.compare.clothBag}</td>
+      </tr>
+      <tr>
+        <td>{t.compare.price}</td>
+        <td class="price-cell">{formatCrc(a01v60.priceCrc)}</td>
+        <td class="price-cell">{formatCrc(a01bag.priceCrc)}</td>
+        <td class="price-cell">{formatCrc(a02v60.priceCrc)}</td>
+        <td class="price-cell">{formatCrc(a02bag.priceCrc)}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

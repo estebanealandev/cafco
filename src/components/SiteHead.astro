@@ -1,0 +1,55 @@
+---
+import type { Locale } from '@/i18n/config'
+import { EMAIL, IG_URL, SITE_NAME, SITE_URL, WA_PHONE_DISPLAY } from '@/data/site'
+import { DEFAULT_LOCALE, LOCALES, OG_LOCALE_MAP } from '@/i18n/config'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+
+const canonicalUrl = new URL(`/${locale}/`, Astro.site)
+const ogImageUrl = new URL('/og-image.png', Astro.site)
+const logoUrl = new URL('/cafco-logo.svg', Astro.site)
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: logoUrl.toString(),
+  image: ogImageUrl.toString(),
+  sameAs: [IG_URL],
+  email: EMAIL,
+  telephone: WA_PHONE_DISPLAY,
+}
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{t.seo.title}</title>
+<meta name="description" content={t.seo.description} />
+<link rel="canonical" href={canonicalUrl} />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+
+{LOCALES.map((l) => <link rel="alternate" hreflang={l} href={new URL(`/${l}/`, Astro.site).toString()} />)}
+<link rel="alternate" hreflang="x-default" href={new URL(`/${DEFAULT_LOCALE}/`, Astro.site).toString()} />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:title" content={t.seo.title} />
+<meta property="og:description" content={t.seo.description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:locale" content={OG_LOCALE_MAP[locale]} />
+{LOCALES.filter((l) => l !== locale).map((l) => <meta property="og:locale:alternate" content={OG_LOCALE_MAP[l]} />)}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={t.seo.title} />
+<meta name="twitter:description" content={t.seo.description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} is:inline />

@@ -1,0 +1,48 @@
+---
+import type { Locale } from '@/i18n/config'
+import { Image } from 'astro:assets'
+import storyImage from '@/assets/story/texture.png'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+---
+
+<section class="story container" id="nosotros">
+  <div class="story-grid">
+    <div class="story-image reveal">
+      <Image
+        src={storyImage}
+        alt={t.alt.story}
+        widths={[400, 800]}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        quality={85}
+        loading="lazy"
+      />
+    </div>
+    <div class="story-content reveal reveal-d2">
+      <p class="eyebrow">{t.story.eyebrow}</p>
+      <h2 set:html={t.story.title} />
+      <p>{t.story.p1}</p>
+      <p>{t.story.p2}</p>
+      <div class="story-values">
+        <div class="story-value">
+          <div class="number">{t.story.v1n}</div>
+          <label>{t.story.v1l}</label>
+        </div>
+        <div class="story-value">
+          <div class="number">{t.story.v2n}</div>
+          <label>{t.story.v2l}</label>
+        </div>
+        <div class="story-value">
+          <div class="number">{t.story.v3n}</div>
+          <label>{t.story.v3l}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+import type { Locale } from '@/i18n/config'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+---
+
+<div class="featured-strip">
+  <div class="featured-strip-item">
+    <h3>{t.features.f1Title}</h3>
+    <p>{t.features.f1Desc}</p>
+  </div>
+  <div class="featured-strip-item">
+    <h3>{t.features.f2Title}</h3>
+    <p>{t.features.f2Desc}</p>
+  </div>
+  <div class="featured-strip-item">
+    <h3>{t.features.f3Title}</h3>
+    <p>{t.features.f3Desc}</p>
+  </div>
+  <div class="featured-strip-item">
+    <h3>{t.features.f4Title}</h3>
+    <p>{t.features.f4Desc}</p>
+  </div>
+</div>

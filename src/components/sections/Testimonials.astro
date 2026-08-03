@@ -1,0 +1,20 @@
+---
+import type { Locale } from '@/i18n/config'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+---
+
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonial-inner reveal">
+      <blockquote class="testimonial-quote">{t.testimonials.q1}</blockquote>
+      <p class="testimonial-author">{t.testimonials.a1}</p>
+    </div>
+  </div>
+</section>

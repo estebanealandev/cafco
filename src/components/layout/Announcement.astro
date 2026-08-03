@@ -1,0 +1,36 @@
+---
+import type { Locale } from '@/i18n/config'
+import { IG_URL, WA_BASE } from '@/data/site'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+const [announcementPart1, announcementPart2] = t.announcement.split('·').map((part) => part.trim())
+---
+
+<div class="announcement">
+  <div class="announcement-track">
+    {
+      Array.from({ length: 4 }).map(() => (
+        <span class="announcement-item">
+          {announcementPart1}
+          <span class="announcement-dot">•</span>
+          {announcementPart2}
+          &nbsp;
+          <a href={WA_BASE} target="_blank" rel="noopener noreferrer">
+            {t.announcementWa}
+          </a>
+          &nbsp;{t.announcementAnd}&nbsp;
+          <a href={IG_URL} target="_blank" rel="noopener noreferrer">
+            {t.announcementIg}
+          </a>
+          <span class="announcement-dot">•</span>
+        </span>
+      ))
+    }
+  </div>
+</div>

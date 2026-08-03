@@ -1,0 +1,28 @@
+---
+import type { Locale } from '@/i18n/config'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+---
+
+<section class="newsletter">
+  <div class="container reveal">
+    <h2>{t.newsletter.title}</h2>
+    <p>{t.newsletter.desc}</p>
+    <form class="newsletter-form" data-newsletter-form>
+      <input type="email" placeholder={t.newsletter.placeholder} required />
+      <button type="submit">{t.newsletter.btn}</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.querySelector('[data-newsletter-form]')?.addEventListener('submit', (event) => {
+    event.preventDefault()
+  })
+</script>

@@ -1,0 +1,43 @@
+.announcement {
+  background: rgba(26, 22, 18, 0.92);
+  color: rgba(245, 241, 236, 0.75);
+  height: 32px;
+  display: flex;
+  align-items: center;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+.announcement-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.announcement-item {
+  display: inline-flex;
+  align-items: center;
+}
+.announcement-dot {
+  margin: 0 1.5rem;
+  color: rgba(245, 241, 236, 0.3);
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.announcement a {
+  border-bottom: 1px solid rgba(245, 241, 236, 0.3);
+  transition: border-color var(--duration);
+  color: rgba(245, 241, 236, 0.9);
+}
+.announcement a:hover {
+  border-color: rgba(245, 241, 236, 0.8);
+}

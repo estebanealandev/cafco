@@ -1,0 +1,24 @@
+---
+import type { Locale } from '@/i18n/config'
+import { LOCALE_LABELS, LOCALES } from '@/i18n/config'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+---
+
+<div class="locale-switcher">
+  <select class="locale-select" aria-label={t.nav.selectLanguage} data-locale-switcher>
+    {
+      LOCALES.map((l) => (
+        <option value={`/${l}/`} selected={l === locale}>
+          {LOCALE_LABELS[l]}
+        </option>
+      ))
+    }
+  </select>
+</div>

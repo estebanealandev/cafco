@@ -1,0 +1,43 @@
+---
+import type { Locale } from '@/i18n/config'
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon.astro'
+import LocaleSwitcher from '@/components/layout/LocaleSwitcher.astro'
+import logo from '@/assets/brand/cafco-logo.svg'
+import { WA_BASE } from '@/data/site'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+---
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="#modelos">{t.nav.models}</a></li>
+      <li><a href="#materiales">{t.nav.materials}</a></li>
+      <li><a href="#preparacion">{t.nav.preparation}</a></li>
+      <li><a href="#nosotros">{t.nav.about}</a></li>
+    </ul>
+    <a href="#" class="nav-logo">
+      <img src={logo.src} alt="CAFCO" class="nav-logo-img" />
+    </a>
+    <div class="nav-actions">
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" class="nav-wa">
+        <WhatsAppIcon />
+        {t.nav.order}
+      </a>
+      <LocaleSwitcher locale={locale} />
+      <button class="menu-toggle" aria-label="Menú" data-mobile-menu-open>
+        <div class="menu-toggle-lines">
+          <span></span>
+          <span></span>
+        </div>
+        Menú
+      </button>
+    </div>
+  </div>
+</nav>

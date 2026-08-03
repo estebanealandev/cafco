@@ -1,0 +1,10 @@
+---
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon.astro'
+import { WA_BASE } from '@/data/site'
+
+const message = encodeURIComponent('Hola, quiero información sobre CAFCO')
+---
+
+<a href={`${WA_BASE}?text=${message}`} target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="WhatsApp">
+  <WhatsAppIcon size={28} />
+</a>

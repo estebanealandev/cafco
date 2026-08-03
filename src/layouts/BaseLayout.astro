@@ -1,0 +1,43 @@
+---
+import type { Locale } from '@/i18n/config'
+import '@fontsource/instrument-serif/latin-400.css'
+import '@fontsource/instrument-serif/latin-400-italic.css'
+import '@fontsource-variable/instrument-sans/wght.css'
+import '@/styles/global.css'
+import Announcement from '@/components/layout/Announcement.astro'
+import Footer from '@/components/layout/Footer.astro'
+import MobileMenu from '@/components/layout/MobileMenu.astro'
+import Nav from '@/components/layout/Nav.astro'
+import WhatsAppFloat from '@/components/layout/WhatsAppFloat.astro'
+import SiteHead from '@/components/SiteHead.astro'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+---
+
+<html lang={locale}>
+  <head>
+    <SiteHead locale={locale} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Announcement locale={locale} />
+    <Nav locale={locale} />
+    <MobileMenu locale={locale} />
+    <slot />
+    <Footer locale={locale} />
+    <WhatsAppFloat />
+
+    <script>
+      import '@/scripts/lenis'
+      import '@/scripts/nav-scroll'
+      import '@/scripts/mobile-menu'
+      import '@/scripts/smooth-anchor'
+      import '@/scripts/reveal'
+      import '@/scripts/locale-switcher'
+    </script>
+  </body>
+</html>

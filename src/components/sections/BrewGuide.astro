@@ -1,0 +1,36 @@
+---
+import type { Locale } from '@/i18n/config'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+---
+
+<section class="brew-guide container" id="preparacion">
+  <div class="catalog-header reveal">
+    <h2>{t.brew.title}</h2>
+    <p>{t.brew.desc}</p>
+  </div>
+  <div class="brew-steps">
+    <div class="brew-step reveal reveal-d1">
+      <h3>{t.brew.s1}</h3>
+      <p>{t.brew.s1d}</p>
+    </div>
+    <div class="brew-step reveal reveal-d2">
+      <h3>{t.brew.s2}</h3>
+      <p>{t.brew.s2d}</p>
+    </div>
+    <div class="brew-step reveal reveal-d3">
+      <h3>{t.brew.s3}</h3>
+      <p>{t.brew.s3d}</p>
+    </div>
+    <div class="brew-step reveal">
+      <h3>{t.brew.s4}</h3>
+      <p>{t.brew.s4d}</p>
+    </div>
+  </div>
+</section>

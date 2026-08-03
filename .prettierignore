@@ -1,0 +1,14 @@
+# JS/TS/Astro formatting is owned by ESLint's stylistic rules and its
+# formatters:{astro:true} bridge (see eslint.config.mjs) — bare Prettier
+# disagrees with both on subtle formatting details, causing the two tools
+# to fight and oscillate if both run on the same files.
+*.js
+*.cjs
+*.mjs
+*.ts
+*.tsx
+*.astro
+
+.astro/
+dist/
+pnpm-lock.yaml

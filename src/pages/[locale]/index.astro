@@ -1,0 +1,36 @@
+---
+import type { Locale } from '@/i18n/config'
+import Audience from '@/components/sections/Audience.astro'
+import BrewGuide from '@/components/sections/BrewGuide.astro'
+import Catalog from '@/components/sections/Catalog.astro'
+import FeaturedStrip from '@/components/sections/FeaturedStrip.astro'
+import Hero from '@/components/sections/Hero.astro'
+import Manifesto from '@/components/sections/Manifesto.astro'
+import Materials from '@/components/sections/Materials.astro'
+import Newsletter from '@/components/sections/Newsletter.astro'
+import Story from '@/components/sections/Story.astro'
+import Testimonials from '@/components/sections/Testimonials.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { LOCALES } from '@/i18n/config'
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }))
+}
+
+const { locale } = Astro.params as { locale: Locale }
+---
+
+<BaseLayout locale={locale}>
+  <main id="main-content">
+    <Hero locale={locale} />
+    <FeaturedStrip locale={locale} />
+    <Manifesto locale={locale} />
+    <Catalog locale={locale} />
+    <Materials locale={locale} />
+    <BrewGuide locale={locale} />
+    <Audience locale={locale} />
+    <Testimonials locale={locale} />
+    <Story locale={locale} />
+    <Newsletter locale={locale} />
+  </main>
+</BaseLayout>

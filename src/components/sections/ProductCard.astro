@@ -1,0 +1,55 @@
+---
+import type { Product } from '@/data/products'
+import type { Messages } from '@/i18n/messages'
+import { Image } from 'astro:assets'
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon.astro'
+import { formatCrc } from '@/data/products'
+import { WA_BASE } from '@/data/site'
+
+interface Props {
+  product: Product
+  copy: Messages['products'][Product['key']]
+  eager?: boolean
+}
+
+const { product, copy, eager = false } = Astro.props
+const waMessage = encodeURIComponent(product.waMessage)
+---
+
+<div class="product-card reveal" data-model={product.model}>
+  <div class="product-card-gallery">
+    <Image
+      src={product.image}
+      alt={copy.eyebrow}
+      widths={[400, 800]}
+      sizes="(max-width: 768px) 100vw, 50vw"
+      quality={85}
+      loading={eager ? 'eager' : 'lazy'}
+    />
+    {copy.badge && <span class="product-badge">{copy.badge}</span>}
+  </div>
+  <div class="product-card-info">
+    <p class="product-eyebrow">{copy.eyebrow}</p>
+    <h3 set:html={copy.name} />
+    <p class="product-card-tagline">{copy.tagline}</p>
+    <p class="product-card-desc">{copy.desc}</p>
+    <div class="product-includes">
+      <h4>{copy.includesTitle}</h4>
+      <ul>
+        <li>{copy.include1}</li>
+        <li>{copy.include2}</li>
+        <li>{copy.include3}</li>
+      </ul>
+    </div>
+    <div class="product-price-row">
+      <span class="product-price">{formatCrc(product.priceCrc)}</span>
+      <span class="product-price-note">{copy.priceNote}</span>
+    </div>
+    <div class="product-card-actions">
+      <a href={`${WA_BASE}?text=${waMessage}`} target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-sm">
+        <WhatsAppIcon size={14} />
+        {copy.cta}
+      </a>
+    </div>
+  </div>
+</div>

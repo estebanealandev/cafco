@@ -1,0 +1,56 @@
+---
+import type { Locale } from '@/i18n/config'
+import { Image } from 'astro:assets'
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon.astro'
+import audienceImage from '@/assets/story/audience.webp'
+import { WA_BASE } from '@/data/site'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+const waMessage = encodeURIComponent('Hola, quiero ordenar mi chorreador CAFCO')
+---
+
+<section class="audience">
+  <div class="container">
+    <div class="audience-grid">
+      <div class="audience-left reveal">
+        <h2 set:html={t.audience.title} />
+        <div class="audience-negatives">
+          <p>{t.audience.neg1}</p>
+          <p>{t.audience.neg2}</p>
+          <p>{t.audience.neg3}</p>
+          <p>{t.audience.neg4}</p>
+        </div>
+        <ul class="audience-positives">
+          <li>{t.audience.pos1}</li>
+          <li>{t.audience.pos2}</li>
+          <li>{t.audience.pos3}</li>
+          <li>{t.audience.pos4}</li>
+          <li>{t.audience.pos5}</li>
+        </ul>
+        <div class="audience-cta">
+          <p>{t.audience.cta}</p>
+          <a href={`${WA_BASE}?text=${waMessage}`} target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-sm">
+            <WhatsAppIcon size={14} />
+            {t.audience.ctaBtn}
+          </a>
+        </div>
+      </div>
+      <div class="audience-image reveal reveal-d2">
+        <Image
+          src={audienceImage}
+          alt={t.alt.audience}
+          widths={[450, 900]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          quality={85}
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>

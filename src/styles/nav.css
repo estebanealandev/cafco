@@ -1,0 +1,203 @@
+/* Dark full-bleed nav, centered logo */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(26, 22, 18, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(245, 241, 236, 0.08);
+  transition:
+    background 0.4s var(--ease-out),
+    box-shadow 0.3s;
+}
+.nav.scrolled {
+  background: rgba(20, 17, 14, 0.97);
+  box-shadow: 0 2px 32px rgba(0, 0, 0, 0.25);
+}
+.nav-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 68px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: flex-start;
+}
+.nav-links a {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(245, 241, 236, 0.55);
+  transition: color var(--duration);
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: rgba(245, 241, 236, 0.7);
+  transition: width var(--duration) var(--ease-smooth);
+}
+.nav-links a:hover {
+  color: rgba(245, 241, 236, 0.95);
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+.nav-logo-img {
+  height: 1.35rem; /* Optical match for 1.55rem text */
+  width: auto;
+  object-fit: contain;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  justify-content: flex-end;
+}
+.nav-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-wa);
+  transition: opacity var(--duration);
+}
+.nav-wa:hover {
+  opacity: 0.8;
+}
+.nav-wa svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Menu button — matches the dark block in the reference */
+.menu-toggle,
+.locale-switcher {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  background: rgba(245, 241, 236, 0.08);
+  border: 1px solid rgba(245, 241, 236, 0.12);
+  color: rgba(245, 241, 236, 0.85);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition:
+    background var(--duration),
+    border-color var(--duration);
+  cursor: pointer;
+}
+.menu-toggle:hover,
+.locale-switcher:hover {
+  background: rgba(245, 241, 236, 0.14);
+  border-color: rgba(245, 241, 236, 0.25);
+}
+.locale-select {
+  background: transparent;
+  color: inherit;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+}
+.locale-select option {
+  background: #1a1612;
+  color: rgba(245, 241, 236, 0.85);
+}
+
+.menu-toggle-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.menu-toggle-lines span {
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: rgba(245, 241, 236, 0.85);
+  transition: all 0.3s;
+}
+
+/* Mobile menu overlay */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 17, 14, 0.98);
+  z-index: 200;
+  padding: var(--space-3xl) var(--space-lg);
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.mobile-menu.active {
+  display: flex;
+}
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: rgba(245, 241, 236, 0.85);
+  transition: color var(--duration);
+}
+.mobile-menu a:hover {
+  color: rgba(245, 241, 236, 1);
+}
+.mobile-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-size: 1.5rem;
+  color: rgba(245, 241, 236, 0.7);
+}
+
+/* Breakpoints shared across all section stylesheets: 1024px / 768px / 480px */
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+  .nav-inner {
+    grid-template-columns: auto 1fr auto;
+  }
+  .nav-logo {
+    text-align: left;
+    justify-self: start;
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-wa {
+    display: none;
+  }
+}

@@ -1,0 +1,66 @@
+.brew-guide {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+.brew-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+  counter-reset: step;
+}
+.brew-step {
+  text-align: center;
+  counter-increment: step;
+  position: relative;
+}
+.brew-step::before {
+  content: counter(step, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--color-concrete);
+  margin-bottom: var(--space-sm);
+  line-height: 1;
+}
+.brew-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: var(--space-xs);
+}
+.brew-step p {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+.brew-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  right: -1.25rem;
+  width: var(--space-lg);
+  height: 1px;
+  background: var(--color-border);
+}
+
+@media (max-width: 768px) {
+  .brew-steps {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 var(--space-sm);
+  }
+  .brew-step:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .brew-steps {
+    grid-template-columns: 1fr;
+    padding: 0 var(--space-md);
+  }
+  .brew-step {
+    padding: var(--space-lg) var(--space-sm);
+  }
+}

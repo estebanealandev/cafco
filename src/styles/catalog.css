@@ -1,0 +1,66 @@
+.catalog {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+.catalog-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+.catalog-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.2;
+}
+.catalog-header p {
+  color: var(--color-text-secondary);
+  margin-top: var(--space-sm);
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.catalog-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-sm);
+}
+.catalog-tab {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  padding-bottom: 10px;
+  position: relative;
+  transition: color var(--duration);
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+.catalog-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-text);
+  transition: width var(--duration) var(--ease-smooth);
+}
+.catalog-tab:hover,
+.catalog-tab.active {
+  color: var(--color-text);
+}
+.catalog-tab.active::after {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .catalog-tabs {
+    gap: var(--space-md);
+  }
+}

@@ -1,0 +1,27 @@
+---
+import type { Locale } from '@/i18n/config'
+import LocaleSwitcher from '@/components/layout/LocaleSwitcher.astro'
+import { WA_BASE } from '@/data/site'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+---
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" aria-label="Cerrar" data-mobile-menu-close>&#10005;</button>
+  <a href="#modelos">{t.nav.models}</a>
+  <a href="#materiales">{t.nav.materials}</a>
+  <a href="#preparacion">{t.nav.preparation}</a>
+  <a href="#nosotros">{t.nav.about}</a>
+  <div style="margin-top: 2rem;">
+    <LocaleSwitcher locale={locale} />
+  </div>
+  <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style="color: var(--color-wa);">
+    {t.nav.order} por WhatsApp
+  </a>
+</div>

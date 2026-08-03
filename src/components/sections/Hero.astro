@@ -1,0 +1,49 @@
+---
+import type { Locale } from '@/i18n/config'
+import { Image } from 'astro:assets'
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon.astro'
+import heroImage from '@/assets/hero/hero-1.webp'
+import { WA_BASE } from '@/data/site'
+import { getMessages } from '@/i18n/messages'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getMessages(locale)
+const waMessage = encodeURIComponent('Hola, quiero ordenar un chorreador CAFCO')
+---
+
+<section class="hero" id="inicio">
+  <div class="hero-bg">
+    <Image
+      src={heroImage}
+      alt={t.alt.hero}
+      class="hero-product-image"
+      widths={[640, 1200, 2400]}
+      sizes="100vw"
+      quality={90}
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">{t.hero.eyebrow}</p>
+    <h1 set:html={t.hero.title} />
+    <p class="hero-subtitle">{t.hero.subtitle}</p>
+    <div class="hero-ctas">
+      <a href="#modelos" class="btn btn-primary">{t.hero.ctaPrimary}</a>
+      <a href={`${WA_BASE}?text=${waMessage}`} target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+        <WhatsAppIcon />
+        {t.hero.ctaWa}
+      </a>
+    </div>
+  </div>
+  <a href="#modelos" class="hero-scroll-arrow" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </a>
+</section>

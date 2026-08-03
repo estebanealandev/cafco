@@ -1,0 +1,184 @@
+{
+  "seo": {
+    "title": "CAFCO — Handwerkliche Kaffeebereiter aus Beton und Teakholz",
+    "description": "Handwerkliche Kaffeebereiter aus Beton und Teakholz, handgefertigt in Costa Rica. Minimalistisches Design für ein gehobenes Kaffeeritual."
+  },
+  "alt": {
+    "hero": "CAFCO Kaffeebereiter",
+    "audience": "CAFCO A01 und A02 Kaffeebereiter zusammen",
+    "story": "Detailansicht der CAFCO-Betontextur"
+  },
+  "announcement": "Limitierte Produktion · Direktbestellung über",
+  "announcementWa": "WhatsApp",
+  "announcementAnd": "und",
+  "announcementIg": "Instagram",
+  "nav": {
+    "models": "Modelle",
+    "materials": "Materialien",
+    "preparation": "Zubereitung",
+    "about": "Über uns",
+    "order": "Bestellen",
+    "selectLanguage": "Sprache auswählen"
+  },
+  "hero": {
+    "eyebrow": "Handgemacht in Costa Rica",
+    "title": "Entworfen für<br /><em>langsame Rituale</em>",
+    "subtitle": "Handwerkliche Kaffeebereiter aus Beton. Eine funktionale Skulptur für diejenigen, die Schönheit in der Pause sehen.",
+    "ctaPrimary": "Modelle ansehen",
+    "ctaWa": "Jetzt bestellen"
+  },
+  "features": {
+    "f1Title": "Handwerklicher Beton",
+    "f1Desc": "Jedes Stück ein Unikat",
+    "f2Title": "Teakholz",
+    "f2Desc": "Lokale Aufforstung",
+    "f3Title": "V60 Dripper oder Stoff",
+    "f3Desc": "Zwei Methoden",
+    "f4Title": "Limitierte Produktion",
+    "f4Desc": "Direktbestellung"
+  },
+  "manifesto": "Jeder CAFCO Pour-Over ist eine minimale Struktur, gemacht, um ein <em>alltägliches Ritual</em> zu tragen. Beton, Holz und Glas vereinen sich zu einem Objekt, das nicht nur nützlich ist — es ist <em>Präsenz</em>.",
+  "catalog": {
+    "title": "Die Kollektion",
+    "desc": "Zwei Modelle, zwei Maßstäbe. Das gleiche Bekenntnis zur Ehrlichkeit von Material und Detail.",
+    "tabAll": "Alle",
+    "tabA01": "A01 — Teilen",
+    "tabA02": "A02 — Persönlich"
+  },
+  "products": {
+    "a01v60": {
+      "eyebrow": "Modell A01 · Mit V60 Dripper",
+      "name": "Kaffeebereiter <em>A01</em>",
+      "badge": "Flaggschiff",
+      "tagline": "Der Erste seiner Serie.",
+      "desc": "Konzipiert als funktionale Skulptur, entworfen, um das Kaffeeritual mit anderen zu teilen. Robust und brutalistisch: Der A01 ist der Anfang der CAFCO Kollektion.",
+      "includesTitle": "Was ist enthalten?",
+      "include1": "Betonblock (6 kg)",
+      "include2": "Holzarm (Teak)",
+      "include3": "V60 Dripper (Glas)",
+      "priceNote": "Inkl. MwSt.",
+      "cta": "Über WhatsApp bestellen"
+    },
+    "a01bag": {
+      "eyebrow": "Modell A01 · Mit Stoffbeutel",
+      "name": "Kaffeebereiter <em>A01</em>",
+      "badge": "Bestseller",
+      "tagline": "Der Erste seiner Serie und lokaler Favorit.",
+      "desc": "Die gleiche monolithische Basis aus strukturiertem Beton. Diese Version enthält einen handgefertigten Stoffbeutel — für diejenigen, die die traditionelle costa-ricanische Methode bevorzugen.",
+      "includesTitle": "Was ist enthalten?",
+      "include1": "Betonblock (6 kg)",
+      "include2": "Holzarm (Teak)",
+      "include3": "Stoffbeutel",
+      "priceNote": "Inkl. MwSt.",
+      "cta": "Über WhatsApp bestellen"
+    },
+    "a02v60": {
+      "eyebrow": "Modell A02 · Mit V60 Dripper",
+      "name": "Kaffeebereiter <em>A02</em>",
+      "badge": "Kompakt",
+      "tagline": "Für alle, die ihren Kaffee nicht gerne teilen.",
+      "desc": "Der A02 entstand als portablere Version — eine funktionale Skulptur für eine einzelne Tasse. Ein Ort, an dem das Kaffeeritual seinen Platz findet.",
+      "includesTitle": "Was ist enthalten?",
+      "include1": "Betonblock (2 kg)",
+      "include2": "Holzarm (Teak)",
+      "include3": "V60 Dripper (Glas)",
+      "priceNote": "Inkl. MwSt.",
+      "cta": "Über WhatsApp bestellen"
+    },
+    "a02bag": {
+      "eyebrow": "Modell A02 · Mit Stoffbeutel",
+      "name": "Kaffeebereiter <em>A02</em>",
+      "badge": "Favorit",
+      "tagline": "Die gefragteste Einzeloption.",
+      "desc": "Kompakt, funktional und mit der gleichen architektonischen Präsenz wie der A01. Behält die Betonstruktur in einem leichteren Maßstab bei.",
+      "includesTitle": "Was ist enthalten?",
+      "include1": "Betonblock (2 kg)",
+      "include2": "Holzarm (Teak)",
+      "include3": "Stoffbeutel",
+      "priceNote": "Inkl. MwSt.",
+      "cta": "Über WhatsApp bestellen"
+    }
+  },
+  "compare": {
+    "scale": "Maßstab",
+    "weight": "Gewicht",
+    "wood": "Holz",
+    "filter": "Filter",
+    "price": "Preis",
+    "sharing": "Zum Teilen",
+    "personal": "Persönlich",
+    "teca": "Teak",
+    "dripperV60": "Glas V60 Dripper",
+    "clothBag": "Stoffbeutel"
+  },
+  "materials": {
+    "title": "Alles steckt im Detail",
+    "desc": "Bei CAFCO schätzen wir diese kleinen Aspekte, die die Essenz eines Objekts definieren.",
+    "m1": "Architekturbeton",
+    "m1d": "Hochleistungsmischung mit strukturiertem Finish. Jede Basis hat einen einzigartigen Farbton — ohne den Prozess zu verschleiern.",
+    "m2": "Teakholz",
+    "m2d": "Costa-ricanisches Aufforstungsholz, geschützt mit einer professionellen, feuchtigkeitsbeständigen Versiegelung. Seine warme Maserung ergänzt die Kälte des Betons perfekt und ist auf Langlebigkeit ausgelegt.",
+    "m3": "Borosilikatglas",
+    "m3d": "Hitzebeständiger V60-Dripper für eine gleichmäßige Extraktion. Alternative: Handgefertigter Stoffbeutel für die costa-ricanische Methode."
+  },
+  "brew": {
+    "title": "Ihr Ritual, verfeinert",
+    "desc": "Vier Schritte zu einer perfekten Tasse mit Ihrem CAFCO Pour-Over.",
+    "s1": "Wasser erhitzen",
+    "s1d": "Erhitzen Sie das Wasser auf ca. 93°C, wärmen Sie den Kegel vor und spülen Sie den Filter aus.",
+    "s2": "Kaffee hinzufügen",
+    "s2d": "Geben Sie 15g mittelfein gemahlenen Kaffee in den Filter und klopfen Sie ihn sanft eben.",
+    "s3": "Aufgießen",
+    "s3d": "Gießen Sie das Wasser in langsamen, kontrollierten Kreisen ein und beenden Sie die Extraktion in 3 Minuten.",
+    "s4": "Genießen",
+    "s4d": "Entfernen Sie vorsichtig den Filter, gießen Sie in Ihre Lieblingstasse ein und genießen Sie den Kaffee in aller Ruhe."
+  },
+  "audience": {
+    "title": "Für wen ist <em>dieses Objekt?</em>",
+    "neg1": "Es ist nicht für jeden.",
+    "neg2": "Es ist nicht schnell.",
+    "neg3": "Es ist nicht leicht.",
+    "neg4": "Es ist nicht wegwerfbar.",
+    "pos1": "Es ist für diejenigen, die Kaffee bewusst genießen.",
+    "pos2": "Für diejenigen, die Details und Design schätzen.",
+    "pos3": "Für diejenigen, die in der Pause Schönheit sehen.",
+    "pos4": "Für diejenigen, die einen Moment gestalten wollen.",
+    "pos5": "Für diejenigen, die mit Sorgfalt einkaufen.",
+    "cta": "Wenn das mit Ihnen mitschwingt, ist CAFCO Ihre Wahl.",
+    "ctaBtn": "Schreiben Sie uns"
+  },
+  "testimonials": {
+    "q1": "Es ist mehr als ein Pour-Over — es ist ein Designstück, das meinen Morgen in ein Ritual verwandelt. Die Qualität ist in jedem Detail spürbar.",
+    "a1": "Carlos V. — San José, Costa Rica"
+  },
+  "story": {
+    "eyebrow": "Unsere Geschichte",
+    "title": "Schönheit liegt im Einfachen und <em>Gutgemachten</em>",
+    "p1": "In der Architektur können nur wenige die Ehrlichkeit eines Materials wirklich schätzen.",
+    "p2": "Jedes Stück entsteht aus Respekt vor dem, was es ist — weil wir glauben, dass Design auch aufrichtig sein kann.",
+    "v1n": "28",
+    "v1l": "Tage Aushärtung",
+    "v2n": "100%",
+    "v2l": "Handgemacht",
+    "v3n": "CR",
+    "v3l": "Costa-ricanisches Design"
+  },
+  "newsletter": {
+    "title": "Abonnieren Sie unsere Welt",
+    "desc": "Früher Zugang zu neuen Designs und limitierten Auflagen.",
+    "placeholder": "deine@email.com",
+    "btn": "Abonnieren"
+  },
+  "footer": {
+    "brandDesc": "Handwerkliche Kaffeebereiter aus Beton und Teakholz. Handgefertigt in Costa Rica.",
+    "c1t": "Shop",
+    "c1l1": "Pour-Over A01",
+    "c1l2": "Pour-Over A02",
+    "c2t": "Unternehmen",
+    "c2l1": "Über uns",
+    "c2l2": "Materialien",
+    "c2l3": "Zubereitung",
+    "c3t": "Verbinden",
+    "bott": "© 2026 CAFCO — San José, Costa Rica. Alle Rechte vorbehalten."
+  }
+}
