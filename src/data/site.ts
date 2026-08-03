@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://cafco.cr'
+export const SITE_URL = 'https://cafcocr.com'
 export const SITE_NAME = 'CAFCO'
 export const SITE_TAGLINE
   = 'Chorreadores de café artesanales en concreto y madera'

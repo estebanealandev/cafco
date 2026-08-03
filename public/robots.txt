@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://cafco.cr/sitemap-index.xml
