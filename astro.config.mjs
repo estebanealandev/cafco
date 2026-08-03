@@ -15,6 +15,12 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+  build: {
+    // Never inline <style>/<script> — a strict CSP (script-src/style-src
+    // 'self', no 'unsafe-inline') requires every stylesheet and script to be
+    // an external same-origin file, not embedded in the HTML.
+    inlineStylesheets: 'never',
+  },
   integrations: [
     sitemap({
       i18n: {

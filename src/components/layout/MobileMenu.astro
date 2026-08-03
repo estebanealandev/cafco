@@ -18,10 +18,10 @@ const t = getMessages(locale)
   <a href="#materiales">{t.nav.materials}</a>
   <a href="#preparacion">{t.nav.preparation}</a>
   <a href="#nosotros">{t.nav.about}</a>
-  <div style="margin-top: 2rem;">
+  <div class="mobile-menu-locale-wrap">
     <LocaleSwitcher locale={locale} />
   </div>
-  <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style="color: var(--color-wa);">
+  <a href={WA_BASE} target="_blank" rel="noopener noreferrer" class="mobile-menu-wa-link">
     {t.nav.order} por WhatsApp
   </a>
 </div>

@@ -180,6 +180,12 @@
   font-size: 1.5rem;
   color: rgba(245, 241, 236, 0.7);
 }
+.mobile-menu-locale-wrap {
+  margin-top: 2rem;
+}
+.mobile-menu-wa-link {
+  color: var(--color-wa);
+}
 
 /* Breakpoints shared across all section stylesheets: 1024px / 768px / 480px */
 @media (max-width: 1024px) {
